@@ -29,12 +29,12 @@ body {
 }
 
 .logo {
-  opacity: 0;
+  opacity: 1;
   will-change: transform;
 }
 
 .hero_title {
-  opacity: 0;
+  opacity: 1;
   will-change: transform;
 }
 .box_an {

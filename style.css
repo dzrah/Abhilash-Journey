@@ -66,10 +66,10 @@ body {
 }
 
 .flip_img1 {
-  background-image: url(./assets/right_photo.png);
+  background-image: url(right_photo.png);
 }
 .flip_img2 {
-  background-image: url(./assets/left_photo.png);
+  background-image: url(left_photo.png);
 }
 
 .flip {
@@ -127,7 +127,7 @@ body {
   /* z-index: 100; */
   width: 100%;
   height: 100%;
-  background-image: url("./assets/01.jpg");
+  background-image: url("01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -165,21 +165,21 @@ body {
   will-change: transform;
 }
 
-.mouse_body {
-  opacity: 1;
+/* .mouse_body { */
+  /* opacity: 1;
   border-style: solid;
   border-width: 3px;
   border-color: #fff;
-  border-radius: 32px;
+  border-radius: 32px; */
   /* used just to add space from top */
   /* margin-top: 150px !important; */
   /* size of the mouse body */
-  height: 50px;
-  width: 30px;
+  /* height: 50px;
+  width: 30px; */
   /* to center in browser */
-  margin: 0 auto;
-  will-change: transform;
-}
+  /* margin: 0 auto;
+  will-change: transform; */
+/* } */
 
 .scroll_text {
   margin-top: 20px;
@@ -272,13 +272,6 @@ body {
   justify-content: center;
 }
 
-/* .photo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .left {
   display: flex;
   position: relative;
@@ -369,41 +362,6 @@ body {
   overflow: hidden;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.2);
-  }
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
-circle#dot {
-  transform-origin: 50% 50%;
-  animation: pulse 0.6s -0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate infinite;
-}
-
-lottie-player {
-  --lottie-player-toolbar-height:10px;
-}
-
-circle#ring {
-  transform-origin: 50% 50%;
-  animation: pulse-ring 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-}
 
 .date_cir_line_container {
   position: relative;
@@ -433,18 +391,6 @@ circle#ring {
   transform-origin: top;
   background-color: #070707;
 }
-
-/* .ver_line_2 {
-  transform: translate(50%,50%);
-  z-index: -1;
-  position: relative;
-  bottom: 170px;
-  left: 110%;
-  width: 1px;
-  height: 300px;
-  transform-origin: top;
-  background-color: #070707;
-} */
 
 .video_con {
   position: relative;

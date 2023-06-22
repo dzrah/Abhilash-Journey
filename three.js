@@ -164,16 +164,16 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
  * Enviroment Map
  */
 
-const enviomentMap = cubeTextureLoader.load([
-  "/Standard-Cube-Map/px.png",
-  "/Standard-Cube-Map/nx.png",
-  "/Standard-Cube-Map/py.png",
-  "/Standard-Cube-Map/ny.png",
-  "/Standard-Cube-Map/pz.png",
-  "/Standard-Cube-Map/nz.png"
-])
+// const enviomentMap = cubeTextureLoader.load([
+//   "/Standard-Cube-Map/px.png",
+//   "/Standard-Cube-Map/nx.png",
+//   "/Standard-Cube-Map/py.png",
+//   "/Standard-Cube-Map/ny.png",
+//   "/Standard-Cube-Map/pz.png",
+//   "/Standard-Cube-Map/nz.png"
+// ])
 
-scene.environment = enviomentMap
+// scene.environment = enviomentMap
 // scene.background = enviomentMap
 // console.log(enviomentMap);
 

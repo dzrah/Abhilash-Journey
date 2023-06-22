@@ -193,7 +193,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 /**
  * Textures
  */
-const bakedTexture = textureLoader.load("baked_019.jpg");
+const bakedTexture = textureLoader.load("baked_018.jpg");
 bakedTexture.flipY = false;
 bakedTexture.encoding = THREE.sRGBEncoding;
 
@@ -217,7 +217,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_33.gltf", (gltf) => {
+gltfLoader.load("GGR_Boat_New_Home_35.gltf", (gltf) => {
   // const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
   // const portalLightMesh = gltf.scene.children.find(child => child.name === 'portalLight')
   // const poleLightAMesh = gltf.scene.children.find(child => child.name === 'poleLightA')

@@ -57,10 +57,10 @@ const heroAn = gsap.timeline({
     ease: "power2",
   },
 });
-const loadingBarElement = document.querySelector(".progress");
-const loadingManager = new THREE.LoadingManager(
-  // Loaded
-  () => {
+// const loadingBarElement = document.querySelector(".progress");
+// const loadingManager = new THREE.LoadingManager(
+//   // Loaded
+//   () => {
    
     // let mm = gsap.matchMedia();
 
@@ -89,8 +89,8 @@ const loadingManager = new THREE.LoadingManager(
     //   .from(".scroll_text", { autoAlpha: 0, y: -10, duration: 0.8 }, "-=0.8")
     // });
 
-    mm.add("(max-width: 615px)", () => {
-      TLLoader
+    // mm.add("(max-width: 615px)", () => {
+    //   TLLoader
       // .to(".bloc_txt", {autoAlpha:1, height:"auto", duration:0.6}, "-=0.8")
       // .to(".f2", { autoAlpha: 1, y: 0 })
       // .to(".flip_img1", { display: "none", duration: 0 })
@@ -98,30 +98,30 @@ const loadingManager = new THREE.LoadingManager(
       // .to(".f2", { autoAlpha: 1, y: 0, delay: 0.8, color: "#f7f7f7" })
       // .to(".flip_img1", { display: "block", duration: 0 })
       // .to(".f2", { y: "100%" })
-      .to(".loader", {
-        x: 1900,
-        duration: 1.3,
-        delay: 0.7,
-        ease: "power1.in.out",
-      })
-      .to(".loader", { display: "none", duration: 0 })
-      // .from(".title_logo_container", { scale: 2, duration: 0.8 }, "-=1.3")
-      .to("body", { overflowY: "scroll", duration: 0 })
-      .to(".logo", { autoAlpha: 1 })
-      .to(".hero_title", { autoAlpha: 1})
-      .to(".line", { height: 100})
-      .from(".mouse_body", { autoAlpha: 0})
-      .from(".scroll_text", { autoAlpha: 0})
-    });
-  },
+  //     .to(".loader", {
+  //       x: 1900,
+  //       duration: 1.3,
+  //       delay: 0.7,
+  //       ease: "power1.in.out",
+  //     })
+  //     .to(".loader", { display: "none", duration: 0 })
+  //     // .from(".title_logo_container", { scale: 2, duration: 0.8 }, "-=1.3")
+  //     .to("body", { overflowY: "scroll", duration: 0 })
+  //     .to(".logo", { autoAlpha: 1 })
+  //     .to(".hero_title", { autoAlpha: 1})
+  //     .to(".line", { height: 100})
+  //     .from(".mouse_body", { autoAlpha: 0})
+  //     .from(".scroll_text", { autoAlpha: 0})
+  //   });
+  // },
 
   // Progress
-  (itemUrl, itemsLoaded, itemsTotal) => {
+//   (itemUrl, itemsLoaded, itemsTotal) => {
     
-    const progressRatio = itemsLoaded / itemsTotal;
-    loadingBarElement.style.transform = `scaleX(${progressRatio})`;
-  }
-);
+//     const progressRatio = itemsLoaded / itemsTotal;
+//     loadingBarElement.style.transform = `scaleX(${progressRatio})`;
+//   }
+// );
 
 // /**
 //  * Spector JS
@@ -186,7 +186,7 @@ dracoLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5
 dracoLoader.setDecoderConfig({type:'js'});
 
 // GLTF loader
-const gltfLoader = new GLTFLoader(loadingManager);
+const gltfLoader = new GLTFLoader();
 gltfLoader.setDRACOLoader(dracoLoader);
 
 
@@ -393,7 +393,7 @@ controls.maxPolarAngle = Math.PI / 2.5
  */
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
-  antialias: false,
+  antialias: true,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));

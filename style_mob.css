@@ -265,16 +265,20 @@
       z-index: 100;
     }
   
-    .video_one {
+    /* .video_one { */
       /* bottom: 95px; */
-      position: relative;
+      /* position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 0 2rem;
-    }
+    } */
   
+
+    /* .video_con {
+      padding: 8rem 2rem;
+    } */
   
     .video_one {
       display: flex;

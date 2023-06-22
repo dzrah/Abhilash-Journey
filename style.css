@@ -190,23 +190,23 @@ body {
   will-change: transform;
 }
 
-.mouse_wheel {
+/* .mouse_wheel {
   border-style: solid;
   border-width: 2px;
   border-color: #fff;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #fff; */
   /* position property required to play animation  */
-  position: relative;
+  /* position: relative;
   height: 3px;
-  width: 3px;
+  width: 3px; */
   /* to center wheel in mouse body */
-  margin: 0 auto;
+  /* margin: 0 auto;
   animation: wheel_animation 1.5s linear infinite;
   will-change: transform;
-}
+} */
 
-/* include use -moz-, -webkit-, or -o- for respective browser type*/
+/* include use -moz-, -webkit-, or -o- for respective browser type
 @keyframes wheel_animation {
   0% {
     opacity: 0;
@@ -220,7 +220,7 @@ body {
     opacity: 0;
     top: 33px;
   }
-}
+} */
 
 .first_section {
   position: relative;
@@ -448,7 +448,7 @@ body {
   color: #002cc4;
 }
 
-#container {
+/* #container {
   width: 100%;
   height: 100%;
   position: relative;
@@ -459,7 +459,7 @@ body {
   box-shadow: 0px 0px 20px #000;
   background: linear-gradient(#f9855d, #fdd288, white);
   overflow: hidden;
-}
+} */
 
 .dc_02 {
   position: relative;

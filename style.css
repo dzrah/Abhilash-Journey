@@ -396,6 +396,10 @@ circle#dot {
   animation: pulse 0.6s -0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate infinite;
 }
 
+lottie-player {
+  --lottie-player-toolbar-height:10px;
+}
+
 circle#ring {
   transform-origin: 50% 50%;
   animation: pulse-ring 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
@@ -422,8 +426,8 @@ circle#ring {
 .ver_line {
   z-index: -1;
   position: relative;
-  bottom: 40px;
-  left: 202.5px;
+  bottom: 18px;
+  left: 187.2px;
   width: 1px;
   height: 200px;
   transform-origin: top;
@@ -531,7 +535,7 @@ circle#ring {
   z-index: -1;
   position: relative;
   bottom: 40px;
-  left: 202px;
+  left: 187.2px;
   width: 1px;
   height: 200px;
   transform-origin: top;

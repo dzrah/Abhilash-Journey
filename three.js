@@ -164,16 +164,16 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
  * Enviroment Map
  */
 
-// const enviomentMap = cubeTextureLoader.load([
-//   "/Standard-Cube-Map/px.png",
-//   "/Standard-Cube-Map/nx.png",
-//   "/Standard-Cube-Map/py.png",
-//   "/Standard-Cube-Map/ny.png",
-//   "/Standard-Cube-Map/pz.png",
-//   "/Standard-Cube-Map/nz.png"
-// ])
+const enviomentMap = cubeTextureLoader.load([
+  "/Standard-Cube-Map/px.png",
+  "/Standard-Cube-Map/nx.png",
+  "/Standard-Cube-Map/py.png",
+  "/Standard-Cube-Map/ny.png",
+  "/Standard-Cube-Map/pz.png",
+  "/Standard-Cube-Map/nz.png"
+])
 
-// scene.environment = enviomentMap
+scene.environment = enviomentMap
 // scene.background = enviomentMap
 // console.log(enviomentMap);
 
@@ -217,7 +217,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_35.gltf", (gltf) => {
+gltfLoader.load("GGR_Boat_New_Home_30.gltf", (gltf) => {
   // const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
   // const portalLightMesh = gltf.scene.children.find(child => child.name === 'portalLight')
   // const poleLightAMesh = gltf.scene.children.find(child => child.name === 'poleLightA')
@@ -398,6 +398,10 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMapping = THREE.ReinhardToneMapping
+renderer.toneMappingExposure = 3
+renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 // let labelRenderer = new CSS2DRenderer();
 

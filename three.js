@@ -232,7 +232,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_30_scaled.gltf", (gltf) => {
+gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
   // const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
   // const portalLightMesh = gltf.scene.children.find(child => child.name === 'portalLight')
   // const poleLightAMesh = gltf.scene.children.find(child => child.name === 'poleLightA')

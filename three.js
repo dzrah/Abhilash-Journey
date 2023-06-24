@@ -4,11 +4,17 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Stats from 'https://cdnjs.cloudflare.com/ajax/libs/stats.js/17/Stats.js'
+import { Water } from 'three/examples/jsm/objects/Water.js';
+import { Sky } from 'three/examples/jsm/objects/Sky.js';
+
 // import { gsap } from "gsap";
 // import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 // console.log(CSS2DRenderer,CSS2DObject );
 
 // import Stats from 'stats.js'
+
+
+
 
 
 /**
@@ -150,9 +156,9 @@ const canvas = document.querySelector("canvas.webgl");
 // Scene
 const scene = new THREE.Scene();
 
-/**
- * Loaders
- */
+
+
+
 
 /**
  * CubeTexture 
@@ -176,6 +182,15 @@ const enviomentMap = cubeTextureLoader.load([
 scene.environment = enviomentMap
 // scene.background = enviomentMap
 // console.log(enviomentMap);
+
+// const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
+// directionalLight.castShadow = true
+// directionalLight.shadow.camera.far = 15
+// directionalLight.shadow.mapSize.set(1024, 1024)
+// directionalLight.shadow.normalBias = 0.05
+// directionalLight.position.set(0.25, 3, - 2.25)
+// scene.add(directionalLight)
+
 
 // Texture loader
 const textureLoader = new THREE.TextureLoader();
@@ -217,7 +232,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_30.gltf", (gltf) => {
+gltfLoader.load("GGR_Boat_New_Home_30_scaled.gltf", (gltf) => {
   // const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
   // const portalLightMesh = gltf.scene.children.find(child => child.name === 'portalLight')
   // const poleLightAMesh = gltf.scene.children.find(child => child.name === 'poleLightA')
@@ -271,13 +286,15 @@ gltfLoader.load("GGR_Boat_New_Home_30.gltf", (gltf) => {
   // glass_017.material = glassMaterial
   // glass_018.material = glassMaterial
 
-  gltf.scene.scale.set(0.13, 0.13, 0.13);
-  gltf.scene.rotation.set(0, 90, 0);
-  gltf.scene.position.set(0, -0.1, 0);
+  gltf.scene.scale.set(2.5, 2.5, 2.5);
+  // gltf.scene.rotation.set(0, 90, 0);
+  // gltf.scene.position.set(0, -0.1, 0);
   scene.add(gltf.scene);
   // camera.lookAt(gltf.scene.position);
   // const boat = gltf.scene;
 });
+
+
 
 
 /**
@@ -295,14 +312,19 @@ gltfLoader.load("GGR_Boat_New_Home_30.gltf", (gltf) => {
 
 
 
+
+
+
+
+
 /**
  * Points
  */
 const raycaster = new THREE.Raycaster()
 const points = [
   {
-    position: new THREE.Vector3(0.2, 0.3, 0.6),
-    element: document.querySelector('.point_0'),
+    position: new THREE.Vector3(1.55, 1.7, - 0.6),
+    element: document.querySelector('.point'),
   },
 ]
   //   {
@@ -350,14 +372,22 @@ const camera = new THREE.PerspectiveCamera(
 // camera.position.x = 0;
 // camera.position.y = 0.3;
 // camera.position.z = 0.7;
+camera.position.set(4,1,-8)
 scene.add(camera);
-camera.position.set(4,2.6,-4)
 // let minRotationX = -Math.PI / 4;
 // let maxRotationX = Math.PI / 4;
 // function limitCameraRotation() {
 //   camera.rotation.x = Math.clamp(camera.rotation.x, minRotationX, maxRotationX);
 // }
 // limitCameraRotation()
+
+
+
+
+
+
+
+
 
 
 /**
@@ -394,6 +424,7 @@ controls.maxPolarAngle = Math.PI / 2.5
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   antialias: true,
+  alpha: true,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -402,6 +433,98 @@ renderer.toneMapping = THREE.ReinhardToneMapping
 renderer.toneMappingExposure = 3
 renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
+
+
+
+
+
+//** Water and Sky**/
+
+
+// Water
+
+// const waterGeometry = new THREE.PlaneGeometry( 10000, 10000 );
+
+// let water = new Water(
+//   waterGeometry,
+//   {
+//     textureWidth: 512,
+//     textureHeight: 512,
+//     waterNormals: new THREE.TextureLoader().load( 'waternormals.jpg', function ( texture ) {
+
+//       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
+//     } ),
+//     sunDirection: new THREE.Vector3(),
+//     sunColor: 0xffffff,
+//     waterColor: 0x001e0f,
+//     distortionScale: 3.7,
+//     fog: scene.fog !== undefined
+//   }
+// );
+
+// water.rotation.x = - Math.PI / 2;
+
+// scene.add( water );
+
+// // Skybox
+
+// const sky = new Sky();
+// sky.scale.setScalar( 10000 );
+// scene.add( sky );
+
+// const skyUniforms = sky.material.uniforms;
+
+// skyUniforms[ 'turbidity' ].value = 10;
+// skyUniforms[ 'rayleigh' ].value = 2;
+// skyUniforms[ 'mieCoefficient' ].value = 0.005;
+// skyUniforms[ 'mieDirectionalG' ].value = 0.8;
+
+// const parameters = {
+//   elevation: 2,
+//   azimuth: 180
+// };
+
+// const pmremGenerator = new THREE.PMREMGenerator( renderer );
+// let renderTarget;
+
+// function updateSun() {
+//   let sun = new THREE.Vector3();
+//   const phi = THREE.MathUtils.degToRad( 90 - parameters.elevation );
+//   const theta = THREE.MathUtils.degToRad( parameters.azimuth );
+
+//   sun.setFromSphericalCoords( 1, phi, theta );
+
+//   sky.material.uniforms[ 'sunPosition' ].value.copy( sun );
+//   water.material.uniforms[ 'sunDirection' ].value.copy( sun ).normalize();
+
+//   if ( renderTarget !== undefined ) renderTarget.dispose();
+
+//   renderTarget = pmremGenerator.fromScene( sky );
+
+//   scene.environment = renderTarget.texture;
+
+// }
+
+// updateSun();
+
+//
+
+// controls = new OrbitControls( camera, renderer.domElement );
+// controls.maxPolarAngle = Math.PI * 0.495;
+// controls.target.set( 0, 10, 0 );
+// controls.minDistance = 40.0;
+// controls.maxDistance = 200.0;
+// controls.update();
+
+// const waterUniforms = water.material.uniforms;
+
+// for(let i = 0; i < TRASH_COUNT; i++){
+//   const trash = await createTrash()
+//   trashes.push(trash)
+// }
+
+
 
 // let labelRenderer = new CSS2DRenderer();
 
@@ -439,73 +562,56 @@ const tick = () => {
   controls.update();
   // controls.autoRotate()
 
-  // Update Points
+  // Go through each point
+  for(const point of points)
+  {
+      // Get 2D screen position
+      const screenPosition = point.position.clone()
+      screenPosition.project(camera)
 
-  
-  
-  
-      // Go through each point
-      for(const point of points)
+      // Set the raycaster
+      raycaster.setFromCamera(screenPosition, camera)
+      const intersects = raycaster.intersectObjects(scene.children, true)
+
+      // No intersect found
+      if(intersects.length === 0)
       {
-
-        // console.log(point)
-          // Get 2D screen position
-          const screenPosition = point.position.clone()
-          screenPosition.project(camera)
-
-          // console.log(screenPosition.x);
-
-  
-          // Set the raycaster
-          raycaster.setFromCamera(screenPosition, camera)
-          const intersects = raycaster.intersectObjects(scene.children, true)
-          // console.log(scene.children);
-          // console.log(intersects)
-  
-          // No intersect found
-          // if(intersects.length === 0)
-          // {
-          //     // Show
-          //     point.element.classList.add('visible')
-          // }
-
-          // // Intersect found
-          // else
-          // {
-          //     // Get the distance of the intersection and the distance of the point
-          //     const intersectionDistance = intersects[0].distance
-          //     const pointDistance = point.position.distanceTo(camera.position)
-  
-          //     // Intersection is close than the point
-          //     if(intersectionDistance < pointDistance)
-          //     {
-          //         // Hide
-          //         point.element.classList.remove('visible')
-          //     }
-          //     // Intersection is further than the point
-          //     else
-          //     {
-          //         // Show
-          //         point.element.classList.add('visible')
-          //     }
-          // }
-  
-          // const translateX = screenPosition.x * sizes.width / 2
-          // const translateY = - screenPosition.y * sizes.height / 2
-          // point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+          // Show
+          // point.element.classList.add('visible')
       }
 
-      
+      // Intersect found
+      else
+      {
+          // Get the distance of the intersection and the distance of the point
+          const intersectionDistance = intersects[0].distance
+          const pointDistance = point.position.distanceTo(camera.position)
 
+          // Intersection is close than the point
+          if(intersectionDistance < pointDistance)
+          {
+              // Hide
+              // point.element.classList.remove('visible')
+          }
+          // Intersection is further than the point
+          else
+          {
+              // Show
+              // point.element.classList.add('visible')
+          }
+      }
 
-  // Render
-  renderer.render(scene, camera);
+      const translateX = screenPosition.x * sizes.width * 0.5
+      const translateY = - screenPosition.y * sizes.height * 0.5
+      // point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+  
+}
 
-  // Call tick again on the next frame
-  window.requestAnimationFrame(tick);
-};
+// Render
+renderer.render(scene, camera)
 
-tick();
+// Call tick again on the next frame
+window.requestAnimationFrame(tick)
+}
 
-
-
+tick()

@@ -217,7 +217,7 @@ bakedTexture.encoding = THREE.sRGBEncoding;
  */
 // Baked material
 const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
-scene.background = new THREE.Color(0xffffff);
+// scene.background = new THREE.Color(0xffffff);
 // Portal light material
 // const portalLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
 
@@ -239,6 +239,10 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
   // const poleLightBMesh = gltf.scene.children.find(child => child.name === 'poleLightB')
 
   const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
+  // const floor = gltf.scene.children.find(child => child.name === 'floor')
+
+  // console.log(floor);
+
   // const glass_02 = gltf.scene.children.find(child => child.name === 'glass_02')
   // const glass_03 = gltf.scene.children.find(child => child.name === 'glass_03')
   // const glass_04 = gltf.scene.children.find(child => child.name === 'glass_04')
@@ -268,6 +272,7 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
   // poleLightBMesh.material = poleLightMaterial
 
   glass_01.material = glassMaterial
+//  floor.material = new THREE.Color(0xff0000);
   // glass_02.material = glassMaterial
   // glass_03.material = glassMaterial
   // glass_04.material = glassMaterial
@@ -286,7 +291,7 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
   // glass_017.material = glassMaterial
   // glass_018.material = glassMaterial
 
-  gltf.scene.scale.set(2.5, 2.5, 2.5);
+  gltf.scene.scale.set(1.6, 1.6, 1.6);
   // gltf.scene.rotation.set(0, 90, 0);
   // gltf.scene.position.set(0, -0.1, 0);
   scene.add(gltf.scene);
@@ -323,11 +328,18 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
 const raycaster = new THREE.Raycaster()
 const points = [
   {
-    position: new THREE.Vector3(1.55, 1.7, - 0.6),
-    element: document.querySelector('.point'),
+    position: new THREE.Vector3(0.8, -0.1, -2),
+    element: document.querySelector('.point-0'),
   },
+  {
+    position: new THREE.Vector3(1.2 ,0.9, - 0.5),
+    element: document.querySelector('.point-1'),
+  },
+
+
 ]
-  //   {
+
+//   {
   //     position: new THREE.Vector3(1.55, 1.7, - 0.6),
   //     element: document.querySelector('.circle')
   // },
@@ -364,7 +376,7 @@ window.addEventListener("resize", () => {
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(
-  75,
+  45,
   sizes.width / sizes.height,
   0.1,
   100
@@ -417,6 +429,34 @@ controls.enableDamping = true;
 controls.enableZoom = false;
 controls.autoRotate = true;
 controls.maxPolarAngle = Math.PI / 2.5
+
+let video_001 = document.querySelector(".textvideo")
+let video_002 = document.querySelector(".textvideo_01")
+video_001.muted = true
+// video_001.autoplay = true
+
+points[0].element.addEventListener('mouseover', autoRotOn)
+points[0].element.addEventListener('mouseout', autoRotOff)
+points[1].element.addEventListener('mouseover', autoRotOn)
+points[1].element.addEventListener('mouseout', autoRotOff)
+
+function autoRotOn() {
+controls.autoRotate = false
+video_001.muted = false
+video_001.play()
+video_002.muted = false
+video_002.play()
+// video_001.autoplay = true
+}
+function autoRotOff() {
+controls.autoRotate = true
+video_001.muted = true
+video_001.pause()
+video_002.muted = true
+video_002.pause()
+// video_001.autoplay = false
+}
+
 
 /**
  * Renderer
@@ -526,6 +566,10 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 
 
+
+
+
+
 // let labelRenderer = new CSS2DRenderer();
 
 
@@ -559,7 +603,7 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   // Update controls
-  controls.update();
+  controls.update()
   // controls.autoRotate()
 
   // Go through each point
@@ -577,7 +621,7 @@ const tick = () => {
       if(intersects.length === 0)
       {
           // Show
-          // point.element.classList.add('visible')
+          point.element.classList.add('visible')
       }
 
       // Intersect found
@@ -591,19 +635,19 @@ const tick = () => {
           if(intersectionDistance < pointDistance)
           {
               // Hide
-              // point.element.classList.remove('visible')
+              point.element.classList.remove('visible')
           }
           // Intersection is further than the point
           else
           {
               // Show
-              // point.element.classList.add('visible')
+              point.element.classList.add('visible')
           }
       }
 
       const translateX = screenPosition.x * sizes.width * 0.5
       const translateY = - screenPosition.y * sizes.height * 0.5
-      // point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+      point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
   
 }
 
@@ -615,3 +659,6 @@ window.requestAnimationFrame(tick)
 }
 
 tick()
+
+
+

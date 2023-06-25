@@ -434,6 +434,8 @@ let video_001 = document.querySelector(".textvideo")
 let video_002 = document.querySelector(".textvideo_01")
 video_001.muted = true
 video_002.muted = true
+video_001.playsinline = true
+video_002.playsinline = true
 // video_001.autoplay = true
 
 points[0].element.addEventListener('mouseover', autoRotOn_0)

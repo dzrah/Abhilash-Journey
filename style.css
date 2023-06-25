@@ -502,6 +502,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
 }
 .webgl {
@@ -574,6 +575,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    /* overflow: hidden; */
     /* pointer-events: none; */
 }
 

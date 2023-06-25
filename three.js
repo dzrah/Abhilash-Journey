@@ -326,18 +326,22 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
  * Points
  */
 const raycaster = new THREE.Raycaster()
-const points = [
-  {
-    position: new THREE.Vector3(0.8, -0.1, -2),
-    element: document.querySelector('.point-0'),
-  },
-  {
-    position: new THREE.Vector3(1.2 ,0.9, - 0.5),
-    element: document.querySelector('.point-1'),
-  },
+// const points = [
+//   {
+//     position: new THREE.Vector3(0.8, -0.1, -2),
+//     element: document.querySelector('.point-0'),
+//   },
+//   {
+//     position: new THREE.Vector3(0.8 ,0.9, 1.4),
+//     element: document.querySelector('.point-1'),
+//   },
+//   {
+//     position: new THREE.Vector3(-0.8 ,0.9, 1.4),
+//     element: document.querySelector('.point-2'),
+//   },
 
 
-]
+// ]
 
 //   {
   //     position: new THREE.Vector3(1.55, 1.7, - 0.6),
@@ -430,43 +434,43 @@ controls.enableZoom = false;
 controls.autoRotate = true;
 controls.maxPolarAngle = Math.PI / 2.5
 
-let video_001 = document.querySelector(".textvideo")
-let video_002 = document.querySelector(".textvideo_01")
-video_001.muted = true
-video_002.muted = true
-video_001.playsinline = true
-video_002.playsinline = true
-// video_001.autoplay = true
+// let video_001 = document.querySelector(".textvideo")
+// let video_002 = document.querySelector(".textvideo_01")
+// video_001.muted = true
+// video_002.muted = true
+// video_001.playsinline = true
+// video_002.playsinline = true
+// // video_001.autoplay = true
 
-points[0].element.addEventListener('mouseover', autoRotOn_0)
-points[0].element.addEventListener('mouseout', autoRotOff_0)
-points[1].element.addEventListener('mouseover', autoRotOn_1)
-points[1].element.addEventListener('mouseout', autoRotOff_1)
+// points[0].element.addEventListener('mouseover', autoRotOn_0)
+// points[0].element.addEventListener('mouseout', autoRotOff_0)
+// points[1].element.addEventListener('mouseover', autoRotOn_1)
+// points[1].element.addEventListener('mouseout', autoRotOff_1)
 
-function autoRotOn_0() {
-controls.autoRotate = false
-video_001.muted = false
-video_001.play()
-// video_001.autoplay = true
-}
-function autoRotOff_0() {
-controls.autoRotate = true
-video_001.muted = true
-video_001.pause()
-}
+// function autoRotOn_0() {
+// controls.autoRotate = false
+// video_001.muted = false
+// video_001.play()
+// // video_001.autoplay = true
+// }
+// function autoRotOff_0() {
+// controls.autoRotate = true
+// video_001.muted = true
+// video_001.pause()
+// }
 
-function autoRotOn_1() {
-controls.autoRotate = false
-video_002.muted = false
-video_002.play()
-// video_001.autoplay = true
-}
-function autoRotOff_1() {
-controls.autoRotate = true
-video_002.muted = true
-video_002.pause()
+// function autoRotOn_1() {
+// controls.autoRotate = false
+// video_002.muted = false
+// video_002.play()
+// // video_001.autoplay = true
+// }
+// function autoRotOff_1() {
+// controls.autoRotate = true
+// video_002.muted = true
+// video_002.pause()
 
-}
+// }
 
 
 /**
@@ -618,49 +622,49 @@ const tick = () => {
   // controls.autoRotate()
 
   // Go through each point
-  for(const point of points)
-  {
-      // Get 2D screen position
-      const screenPosition = point.position.clone()
-      screenPosition.project(camera)
+//   for(const point of points)
+//   {
+//       // Get 2D screen position
+//       const screenPosition = point.position.clone()
+//       screenPosition.project(camera)
 
-      // Set the raycaster
-      raycaster.setFromCamera(screenPosition, camera)
-      const intersects = raycaster.intersectObjects(scene.children, true)
+//       // Set the raycaster
+//       raycaster.setFromCamera(screenPosition, camera)
+//       const intersects = raycaster.intersectObjects(scene.children, true)
 
-      // No intersect found
-      if(intersects.length === 0)
-      {
-          // Show
-          point.element.classList.add('visible')
-      }
+//       // No intersect found
+//       if(intersects.length === 0)
+//       {
+//           // Show
+//           // point.element.classList.add('visible')
+//       }
 
-      // Intersect found
-      else
-      {
-          // Get the distance of the intersection and the distance of the point
-          const intersectionDistance = intersects[0].distance
-          const pointDistance = point.position.distanceTo(camera.position)
+//       // Intersect found
+//       else
+//       {
+//           // Get the distance of the intersection and the distance of the point
+//           const intersectionDistance = intersects[0].distance
+//           const pointDistance = point.position.distanceTo(camera.position)
 
-          // Intersection is close than the point
-          if(intersectionDistance < pointDistance)
-          {
-              // Hide
-              point.element.classList.remove('visible')
-          }
-          // Intersection is further than the point
-          else
-          {
-              // Show
-              point.element.classList.add('visible')
-          }
-      }
+//           // Intersection is close than the point
+//           if(intersectionDistance < pointDistance)
+//           {
+//               // Hide
+//               // point.element.classList.remove('visible')
+//           }
+//           // Intersection is further than the point
+//           else
+//           {
+//               // Show
+//               // point.element.classList.add('visible')
+//           }
+//       }
 
-      const translateX = screenPosition.x * sizes.width * 0.5
-      const translateY = - screenPosition.y * sizes.height * 0.5
-      point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+//       const translateX = screenPosition.x * sizes.width * 0.5
+//       const translateY = - screenPosition.y * sizes.height * 0.5
+//       point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
   
-}
+// }
 
 // Render
 renderer.render(scene, camera)

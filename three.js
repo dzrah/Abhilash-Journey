@@ -433,28 +433,37 @@ controls.maxPolarAngle = Math.PI / 2.5
 let video_001 = document.querySelector(".textvideo")
 let video_002 = document.querySelector(".textvideo_01")
 video_001.muted = true
+video_002.muted = true
 // video_001.autoplay = true
 
-points[0].element.addEventListener('mouseover', autoRotOn)
-points[0].element.addEventListener('mouseout', autoRotOff)
-points[1].element.addEventListener('mouseover', autoRotOn)
-points[1].element.addEventListener('mouseout', autoRotOff)
+points[0].element.addEventListener('mouseover', autoRotOn_0)
+points[0].element.addEventListener('mouseout', autoRotOff_0)
+points[1].element.addEventListener('mouseover', autoRotOn_1)
+points[1].element.addEventListener('mouseout', autoRotOff_1)
 
-function autoRotOn() {
+function autoRotOn_0() {
 controls.autoRotate = false
 video_001.muted = false
 video_001.play()
+// video_001.autoplay = true
+}
+function autoRotOff_0() {
+controls.autoRotate = true
+video_001.muted = true
+video_001.pause()
+}
+
+function autoRotOn_1() {
+controls.autoRotate = false
 video_002.muted = false
 video_002.play()
 // video_001.autoplay = true
 }
-function autoRotOff() {
+function autoRotOff_1() {
 controls.autoRotate = true
-video_001.muted = true
-video_001.pause()
 video_002.muted = true
 video_002.pause()
-// video_001.autoplay = false
+
 }
 
 
@@ -659,6 +668,3 @@ window.requestAnimationFrame(tick)
 }
 
 tick()
-
-
-

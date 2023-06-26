@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -514,6 +515,44 @@ body {
   /* display: none; */
 }
 
+.loop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  /* background-color:#002cc4; */
+  font-size: 5rem;
+  white-space: nowrap;
+  font-family: "Roboto";
+  color: #002cc4;
+  text-align: center;
+}
+
+.loop h1 {
+font-weight: 400;
+animation-name: anim;
+animation-duration: 29s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+
+.loop h1 span {
+  -webkit-text-stroke: 1.2px #002cc4;
+  color: transparent;
+}
+
+@keyframes anim {
+  0%{
+    transform: translateX(0%);
+  }
+
+  100%{
+    transform: translateX(-100%);
+  }
+}
+/* 
 .point_0 {
   position: absolute;
   top: 30%;
@@ -529,15 +568,15 @@ body {
 
 .call_out_video {
   /* position: absolute; */
-  width: 30%;
+  /* width: 30%;
   z-index: 20;
   display: flex;
   align-items: end;
   justify-content: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */ 
   
   
-}
+/* }
 .video_001 {
   position: absolute;
   bottom: 50px;
@@ -563,23 +602,23 @@ body {
   height: 10px;
   background-color: #002cc4;
   border-radius: 50%;
-}
+} */
 
 
 /* .point-0 {
   back
 } */
 
-.point
+/* .point
 {
     position: absolute;
     top: 50%;
     left: 50%;
     /* overflow: hidden; */
     /* pointer-events: none; */
-}
+/* } */ 
 
-.point .label
+/* .point .label
 {
     position: absolute;
     top: -20px;
@@ -590,34 +629,34 @@ body {
     background: #002cc4;
     opacity: 0.8;
     border: 1px solid #fcfcfc;;
-    color: #ffffff;
+    color: #ffffff; */
     /* font-family: Helvetica, Arial, sans-serif; */
-    text-align: center;
+    /* text-align: center;
     line-height: 40px;
     font-weight: 300;
     font-size: 14px;
     cursor: help;
     transform: scale(0, 0);
-    transition: transform 0.3s;
-}
+    transition: transform 0.3s; */
+/* } */
 
-.point .text
-{
-    position: absolute;
+/* .point .text
+{ */
+    /* position: absolute;
     top: 30px;
     left: -120px;
-    width: 200px;
+    width: 200px; */
     /* height: 30px; */
     /* padding: 20px; */
-    border-radius: 4px;
+    /* border-radius: 4px;
     background: #002cc4;;
-    border: 1px solid #ffffff77;
+    border: 1px solid #ffffff77; */
     /* color: #ffffff;
     line-height: 1.3em;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 14px; */
-    opacity: 0;
+    /* opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
 }
@@ -630,4 +669,6 @@ body {
 .point.visible .label
 {
     transform: scale(1, 1);
-}
+} */
+
+

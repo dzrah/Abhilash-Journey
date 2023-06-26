@@ -1,5 +1,6 @@
 import './style.css'
 import './style_mob.css'
+// import { gsap } from "gsap";
 
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -238,8 +239,154 @@ mm.add("(min-width: 800px)", () => {
     duration: 1.8,
   });
 
+
+  // const txan = gsap.timmeline()
+//  gsap.to(".an_01", {
+//     duration: 10,
+//     ease: "none",
+//     x: "-=3100", 
+//     modifiers: {
+//       x: gsap.utils.unitize(x => parseFloat(x) % 3100) 
+//     },
+//     repeat: -1
+//   });
+//   gsap.to(".an_02", {
+//     duration: 10,
+//     ease: "none",
+//     x: "-=3500", 
+//     modifiers: {
+//       x: gsap.utils.unitize(x => parseFloat(x) % 6500) //force x value to be between 0 and 500 using modulus
+//     },
+//     repeat: -2
+//   }, "-=3.9");
+// const speed = 50; 
+// let target = document.querySelector(".text_an")
+// let original_html = target.innerHTML
+
+// let new_html = "<div class='ticker-items'>" + original_html + "</div>";
+// target.innerHTML = new_html;
+// target.innerHTML += new_html;
+
+// let tickerWidth = document.querySelector(".ticker-items").offsetWidth;
+// let initDuration = tickerWidth / speed;
+
+// gsap.to(".text_an", {
+//   duration: initDuration,
+//   xPercent: -500,
+//   ease: "none",
+//   repeat: -1
+// });
+
+  
+
+// gsap.set('.wrapper',{xPercent:-50,yPercent:-50})
+// gsap.set('#no02',{y:50})
+
+// var boxWidth = 250,
+//     totalWidth = boxWidth * 7,  //  * n of boxes
+//     no01 = document.querySelectorAll("#no01 .box"),
+//     no02 = document.querySelectorAll("#no02 .box"),
+//     dirFromLeft = "+=" + totalWidth,
+//     dirFromRight = "-=" + totalWidth;
+
+// var mod = gsap.utils.wrap(0, totalWidth);
+
+// function marquee(which, time, direction){
+//   gsap.set(which, {
+//     x:function(i) {
+//       return i * boxWidth;
+//     }
+//   });
+//   var action = gsap.timeline()
+//   .to(which,  {
+//   x: direction,
+//   modifiers: {
+//     x: x => mod(parseFloat(x)) + "px"
+//   },
+//     duration:time, ease:'none',
+//     repeat:-1,
+//   });
+//   return action
+// }
+
+// var master = gsap.timeline({paused:true})
+// .add(marquee(no01, 15, dirFromLeft))
+// .add(marquee(no02, 20, dirFromRight),0)
+
+// // =============================
+
+// var action = gsap.timeline({defaults: {duration: 1, ease:'none'},
+//   scrollTrigger: {
+//     trigger: ".wrapper",
+//     //scrub: 0.5,
+//     start: 'top 60%',
+//     end: "top 20%",
+//     onEnter: isActive => master.play(),
+//     onLeave: isActive => master.pause(),
+//     onLeaveBack: isActive => master.pause(),
+//     onEnterBack: isActive => master.play(),
+//     markers:true
+//   }})
+  
+  
+  // $('ul').on('mouseenter', () => gsap.to(tl, {timeScale: 0, overwrite: true}));
+  // $('ul').on('mouseleave', () => gsap.to(tl, {timeScale: 1, overwrite: true}));
+  
+
+//   gsap.set('.wrapper',{xPercent:-50,yPercent:-50})
+// gsap.set('#no02',{y:50})
+
+// var boxWidth = 250,
+//     totalWidth = boxWidth * 8,  //  * n of boxes
+//     no01 = document.querySelectorAll("#no01 .box"),
+//     no02 = document.querySelectorAll("#no02 .box"),
+//     dirFromLeft = "+=" + totalWidth,
+//     dirFromRight = "-=" + totalWidth;
+
+// var mod = gsap.utils.wrap(0, totalWidth);
+
+// function marquee(which, time, direction){
+//   gsap.set(which, {
+//     x:function(i) {
+//       return i * boxWidth;
+//     }
+//   });
+//   var action = gsap.timeline()
+//   .to(which,  {
+//   x: direction,
+//   modifiers: {
+//     x: x => mod(parseFloat(x)) + "px"
+//   },
+//     duration:time, ease:'none',
+//     repeat:-1,
+//   });
+//   return action
+// }
+
+// var master = gsap.timeline({paused:true})
+// .add(marquee(no01, 15, dirFromLeft))
+// .add(marquee(no02, 20, dirFromRight),0)
+
+// // =============================
+
+// var action = gsap.timeline({defaults: {duration: 1, ease:'none'},
+//   scrollTrigger: {
+//     trigger: ".wrapper",
+//     //scrub: 0.5,
+//     start: '40% 80%',
+//     end: "100% 60%",
+//     onEnter: isActive => master.play(),
+//     onLeave: isActive => master.pause(),
+//     onLeaveBack: isActive => master.pause(),
+//     onEnterBack: isActive => master.play(),
+//     markers:true
+//   }})
+
+
+
+  })
  
-});
+
 
 
 mm.add("(max-width: 615px)", () => {

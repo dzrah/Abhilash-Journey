@@ -153,6 +153,25 @@ const heroAn = gsap.timeline({
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
+let isClicking = false;
+canvas.addEventListener("mousedown", () =>{
+  isClicking = true,
+  canvas.classList.remove("grab")
+  canvas.classList.add("grabbing")
+})
+canvas.addEventListener("mouseup", () =>{
+  isClicking = false,
+  canvas.classList.remove("grabbing")
+  canvas.classList.add("grab")
+})
+
+// function removeStyle(){
+//   canvas.classList.remove = "cursor"
+// }
+function addStyle(){
+  canvas.classList.remove("grab")
+  canvas.classList.add("grabbing")
+}
 // Scene
 const scene = new THREE.Scene();
 
@@ -233,70 +252,67 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
  * Model
  */
 gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
-  // const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
-  // const portalLightMesh = gltf.scene.children.find(child => child.name === 'portalLight')
-  // const poleLightAMesh = gltf.scene.children.find(child => child.name === 'poleLightA')
-  // const poleLightBMesh = gltf.scene.children.find(child => child.name === 'poleLightB')
 
   const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
-  // const floor = gltf.scene.children.find(child => child.name === 'floor')
-
-  // console.log(floor);
-
-  // const glass_02 = gltf.scene.children.find(child => child.name === 'glass_02')
-  // const glass_03 = gltf.scene.children.find(child => child.name === 'glass_03')
-  // const glass_04 = gltf.scene.children.find(child => child.name === 'glass_04')
-  // const glass_05 = gltf.scene.children.find(child => child.name === 'glass_05')
-  // const glass_06 = gltf.scene.children.find(child => child.name === 'glass_06')
-  // const glass_07 = gltf.scene.children.find(child => child.name === 'glass_07')
-  // const glass_08 = gltf.scene.children.find(child => child.name === 'glass_08')
-  // const glass_09 = gltf.scene.children.find(child => child.name === 'glass_09')
-  // const glass_010 = gltf.scene.children.find(child => child.name === 'glass_010')
-  // const glass_011 = gltf.scene.children.find(child => child.name === 'glass_011')
-  // const glass_012 = gltf.scene.children.find(child => child.name === 'glass_012')
-  // const glass_013 = gltf.scene.children.find(child => child.name === 'glass_013')
-  // const glass_014 = gltf.scene.children.find(child => child.name === 'glass_014')
-  // const glass_015 = gltf.scene.children.find(child => child.name === 'glass_015')
-  // const glass_016 = gltf.scene.children.find(child => child.name === 'glass_016')
-  // const glass_017 = gltf.scene.children.find(child => child.name === 'glass_017')
-  // const glass_018 = gltf.scene.children.find(child => child.name === 'glass_018')
-
-  // console.log(glass_01, glass_02, glass_03);
+  
 
   gltf.scene.traverse((child) => {
     child.material = bakedMaterial;
   });
-  // bakedMesh.material = bakedMaterial
-  // portalLightMesh.material = portalLightMaterial
-  // poleLightAMesh.material = poleLightMaterial
-  // poleLightBMesh.material = poleLightMaterial
 
   glass_01.material = glassMaterial
-//  floor.material = new THREE.Color(0xff0000);
-  // glass_02.material = glassMaterial
-  // glass_03.material = glassMaterial
-  // glass_04.material = glassMaterial
-  // glass_05.material = glassMaterial
-  // glass_06.material = glassMaterial
-  // glass_07.material = glassMaterial
-  // glass_08.material = glassMaterial
-  // glass_09.material = glassMaterial
-  // glass_010.material = glassMaterial
-  // glass_011.material = glassMaterial
-  // glass_012.material = glassMaterial
-  // glass_013.material = glassMaterial
-  // glass_014.material = glassMaterial
-  // glass_015.material = glassMaterial
-  // glass_016.material = glassMaterial
-  // glass_017.material = glassMaterial
-  // glass_018.material = glassMaterial
 
-  gltf.scene.scale.set(1.6, 1.6, 1.6);
+
+
+  gltf.scene.scale.set(1.7, 1.7, 1.7);
   // gltf.scene.rotation.set(0, 90, 0);
   // gltf.scene.position.set(0, -0.1, 0);
   scene.add(gltf.scene);
-  // camera.lookAt(gltf.scene.position);
-  // const boat = gltf.scene;
+
+  
+ 
+});
+let mixer;
+
+gltfLoader.load("Bsyanat_Flag_N_01.glb", (glb) => {
+
+  // const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
+  
+  const flagAn = glb.scene.children.find(child => child.name === 'RootNode (gltf orientation matrix)')
+  console.log(flagAn);
+  // gltf.scene.traverse((child) => {
+  //   child.material = bakedMaterial;
+  // });
+
+  // glass_01.material = glassMaterial
+
+  
+  
+
+  // gltf.scene.scale.set(1.7, 1.7, 1.7);
+  // gltf.scene.rotation.set(0, 90, 0);
+  // gltf.scene.position.set(0, -0.1, 0);
+  const flag = glb.scene;
+  mixer = new THREE.AnimationMixer(flag);
+  mixer.timeScale = 25
+  let action = mixer.clipAction(glb.animations[0])
+  action.loop = THREE.LoopRepeat;
+  // setInterval(() => {
+  //   action
+  //     .reset()
+  //     .play();
+  // }, Math.random() * 9000 + 1000);
+  // const clip = THREE.AnimationClip;
+  scene.add(flag);
+  action.play();
+
+  
+
+  flag.scale.set(0.1,0.1,0.1)
+  flag.position.x = -0.15
+  flag.position.y = 1.35
+  flag.position.z = 2.75
+ 
 });
 
 
@@ -315,39 +331,6 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
 // plane.rotateZ(90)
 // plane.scale.set(0.5,0.5,0.5)
 
-
-
-
-
-
-
-
-/**
- * Points
- */
-const raycaster = new THREE.Raycaster()
-// const points = [
-//   {
-//     position: new THREE.Vector3(0.8, -0.1, -2),
-//     element: document.querySelector('.point-0'),
-//   },
-//   {
-//     position: new THREE.Vector3(0.8 ,0.9, 1.4),
-//     element: document.querySelector('.point-1'),
-//   },
-//   {
-//     position: new THREE.Vector3(-0.8 ,0.9, 1.4),
-//     element: document.querySelector('.point-2'),
-//   },
-
-
-// ]
-
-//   {
-  //     position: new THREE.Vector3(1.55, 1.7, - 0.6),
-  //     element: document.querySelector('.circle')
-  // },
-// ]
 
 // gui.add(scene.position, 'y',-5,5,0.01 );
 // gui.add(scene.position, 'x',-5,5,0.01 );
@@ -385,9 +368,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-// camera.position.x = 0;
-// camera.position.y = 0.3;
-// camera.position.z = 0.7;
+
 camera.position.set(4,1,-8)
 scene.add(camera);
 // let minRotationX = -Math.PI / 4;
@@ -486,132 +467,25 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputEncoding = THREE.sRGBEncoding;
 renderer.toneMapping = THREE.ReinhardToneMapping
 renderer.toneMappingExposure = 3
-renderer.shadowMap.enabled = true
-renderer.shadowMap.type = THREE.PCFSoftShadowMap
-
-
-
-
-
-//** Water and Sky**/
-
-
-// Water
-
-// const waterGeometry = new THREE.PlaneGeometry( 10000, 10000 );
-
-// let water = new Water(
-//   waterGeometry,
-//   {
-//     textureWidth: 512,
-//     textureHeight: 512,
-//     waterNormals: new THREE.TextureLoader().load( 'waternormals.jpg', function ( texture ) {
-
-//       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-
-//     } ),
-//     sunDirection: new THREE.Vector3(),
-//     sunColor: 0xffffff,
-//     waterColor: 0x001e0f,
-//     distortionScale: 3.7,
-//     fog: scene.fog !== undefined
-//   }
-// );
-
-// water.rotation.x = - Math.PI / 2;
-
-// scene.add( water );
-
-// // Skybox
-
-// const sky = new Sky();
-// sky.scale.setScalar( 10000 );
-// scene.add( sky );
-
-// const skyUniforms = sky.material.uniforms;
-
-// skyUniforms[ 'turbidity' ].value = 10;
-// skyUniforms[ 'rayleigh' ].value = 2;
-// skyUniforms[ 'mieCoefficient' ].value = 0.005;
-// skyUniforms[ 'mieDirectionalG' ].value = 0.8;
-
-// const parameters = {
-//   elevation: 2,
-//   azimuth: 180
-// };
-
-// const pmremGenerator = new THREE.PMREMGenerator( renderer );
-// let renderTarget;
-
-// function updateSun() {
-//   let sun = new THREE.Vector3();
-//   const phi = THREE.MathUtils.degToRad( 90 - parameters.elevation );
-//   const theta = THREE.MathUtils.degToRad( parameters.azimuth );
-
-//   sun.setFromSphericalCoords( 1, phi, theta );
-
-//   sky.material.uniforms[ 'sunPosition' ].value.copy( sun );
-//   water.material.uniforms[ 'sunDirection' ].value.copy( sun ).normalize();
-
-//   if ( renderTarget !== undefined ) renderTarget.dispose();
-
-//   renderTarget = pmremGenerator.fromScene( sky );
-
-//   scene.environment = renderTarget.texture;
-
-// }
-
-// updateSun();
-
-//
-
-// controls = new OrbitControls( camera, renderer.domElement );
-// controls.maxPolarAngle = Math.PI * 0.495;
-// controls.target.set( 0, 10, 0 );
-// controls.minDistance = 40.0;
-// controls.maxDistance = 200.0;
-// controls.update();
-
-// const waterUniforms = water.material.uniforms;
-
-// for(let i = 0; i < TRASH_COUNT; i++){
-//   const trash = await createTrash()
-//   trashes.push(trash)
-// }
-
-
-
-
-
-
-
-// let labelRenderer = new CSS2DRenderer();
-
-
-// const maxFPS = 60;
-// const frameDelay = 1000 / maxFPS;
-
-// let lastFrameTime = 0;
-
-// function update(currentTime) {
-
-//   const elapsed = currentTime - lastFrameTime;
-
-//   // Only render the frame if enough time has passed
-//   if (elapsed > frameDelay) {
-//     renderer.render(scene,camera)
-
-//     lastFrameTime = currentTime - (elapsed % frameDelay);
-//   }
-// requestAnimationFrame(update)
-// }
-
-// update() ;
+// renderer.shadowMap.enabled = true
+// renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 
 /**
+ * Media Query
+ */
+
+const mediaQuery = window.matchMedia("(min-width:815px)")
+  if (mediaQuery.matchMedia) {
+    gltf.scene.scale.set(0.5, 0.5, 0.5)
+    console.log("Done");
+  }
+
+  
+/**
  * Animate
  */
+
 const clock = new THREE.Clock();
 
 const tick = () => {
@@ -621,56 +495,19 @@ const tick = () => {
   controls.update()
   // controls.autoRotate()
 
-  // Go through each point
-//   for(const point of points)
-//   {
-//       // Get 2D screen position
-//       const screenPosition = point.position.clone()
-//       screenPosition.project(camera)
-
-//       // Set the raycaster
-//       raycaster.setFromCamera(screenPosition, camera)
-//       const intersects = raycaster.intersectObjects(scene.children, true)
-
-//       // No intersect found
-//       if(intersects.length === 0)
-//       {
-//           // Show
-//           // point.element.classList.add('visible')
-//       }
-
-//       // Intersect found
-//       else
-//       {
-//           // Get the distance of the intersection and the distance of the point
-//           const intersectionDistance = intersects[0].distance
-//           const pointDistance = point.position.distanceTo(camera.position)
-
-//           // Intersection is close than the point
-//           if(intersectionDistance < pointDistance)
-//           {
-//               // Hide
-//               // point.element.classList.remove('visible')
-//           }
-//           // Intersection is further than the point
-//           else
-//           {
-//               // Show
-//               // point.element.classList.add('visible')
-//           }
-//       }
-
-//       const translateX = screenPosition.x * sizes.width * 0.5
-//       const translateY = - screenPosition.y * sizes.height * 0.5
-//       point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
-  
-// }
-
 // Render
 renderer.render(scene, camera)
 
 // Call tick again on the next frame
 window.requestAnimationFrame(tick)
+
+//
+
+let delta = clock.getDelta()
+if (mixer) mixer.update(delta)
+renderer.render(scene, camera)
 }
 
 tick()
+
+

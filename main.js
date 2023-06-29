@@ -382,7 +382,8 @@ mm.add("(min-width: 800px)", () => {
 //     markers:true
 //   }})
 
-
+let boatAn = gsap.timeline()
+  
 
   })
  
@@ -404,3 +405,5 @@ mm.add("(max-width: 615px)", () => {
       });
      
 })
+
+

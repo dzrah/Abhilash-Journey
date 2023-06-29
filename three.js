@@ -251,7 +251,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_42_scaled.gltf", (gltf) => {
+gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
 
   const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
   

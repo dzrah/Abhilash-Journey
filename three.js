@@ -251,7 +251,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
+gltfLoader.load("GGR_Boat_New_Home_42_scaled.gltf", (gltf) => {
 
   const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
   
@@ -272,14 +272,14 @@ gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
   
  
 });
-let mixer;
+// let mixer;
 
-gltfLoader.load("Bsyanat_Flag_N_01.glb", (glb) => {
+// gltfLoader.load("Bsyanat_Flag_N_01.glb", (glb) => {
 
-  // const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
+//   // const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
   
-  const flagAn = glb.scene.children.find(child => child.name === 'RootNode (gltf orientation matrix)')
-  console.log(flagAn);
+//   const flagAn = glb.scene.children.find(child => child.name === 'RootNode (gltf orientation matrix)')
+//   console.log(flagAn);
   // gltf.scene.traverse((child) => {
   //   child.material = bakedMaterial;
   // });
@@ -292,28 +292,28 @@ gltfLoader.load("Bsyanat_Flag_N_01.glb", (glb) => {
   // gltf.scene.scale.set(1.7, 1.7, 1.7);
   // gltf.scene.rotation.set(0, 90, 0);
   // gltf.scene.position.set(0, -0.1, 0);
-  const flag = glb.scene;
-  mixer = new THREE.AnimationMixer(flag);
-  mixer.timeScale = 25
-  let action = mixer.clipAction(glb.animations[0])
-  action.loop = THREE.LoopRepeat;
+  // const flag = glb.scene;
+  // mixer = new THREE.AnimationMixer(flag);
+  // mixer.timeScale = 25
+  // let action = mixer.clipAction(glb.animations[0])
+  // action.loop = THREE.LoopRepeat;
   // setInterval(() => {
   //   action
   //     .reset()
   //     .play();
   // }, Math.random() * 9000 + 1000);
   // const clip = THREE.AnimationClip;
-  scene.add(flag);
-  action.play();
+  // scene.add(flag);
+  // action.play();
 
   
 
-  flag.scale.set(0.1,0.1,0.1)
-  flag.position.x = -0.15
-  flag.position.y = 1.35
-  flag.position.z = 2.75
+//   flag.scale.set(0.1,0.1,0.1)
+//   flag.position.x = -0.15
+//   flag.position.y = 1.35
+//   flag.position.z = 2.75
  
-});
+// });
 
 
 
@@ -503,9 +503,9 @@ window.requestAnimationFrame(tick)
 
 //
 
-let delta = clock.getDelta()
-if (mixer) mixer.update(delta)
-renderer.render(scene, camera)
+// let delta = clock.getDelta()
+// if (mixer) mixer.update(delta)
+// renderer.render(scene, camera)
 }
 
 tick()

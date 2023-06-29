@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
  */
 document.querySelector(".video_01").controls = false;
 
+
+
 /**
  * Loader animation
  */

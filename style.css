@@ -571,7 +571,7 @@ body {
   flex-direction: column;
   width: 300%;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   bottom: 120px;
 }
 
@@ -580,27 +580,55 @@ body {
   width: 100%;
   gap: 5px;
   position: relative;
-  overflow: hidden;
+  z-index: 1;
+  /* overflow: hidden; */
+}
+
+.galleries_02 {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  position: relative;
+  /* z-index: 0; */
+  /* overflow: hidden; */
+}
+
+.up {
+  z-index: 9999;
+}
+
+.gallery_up {
+  z-index: 9999;
 }
 
 .gallery {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
-  position: inherit;
+  position: relative;
   animation-name: anim;
   animation-duration: 60s;
+  animation-play-state: running;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   width: 100%;
   gap: 5px;
+  /* z-index: 1; */
 
 }
+
+/* .gallery_stop {
+  display: flex;
+  position: relative;
+  width: 100%;
+  gap: 5px;
+} */
 .gallery_02 {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   /* flex-direction: row-reverse; */
   position: inherit;
   animation-name: anim_rev;
+  animation-play-state: running;
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -608,10 +636,21 @@ body {
   gap: 5px;
 
 }
+/* .gallery_02_stop { */
+  /* overflow: hidden; */
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
+  /* position: inherit;
+  width: 100%;
+  gap: 5px; */
+/*  */
+/* } */
 
 .video_style {
   width: 20%;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
+  /* z-index: 1; */
 }
 .video_style video {
   width: 100%;
@@ -623,7 +662,7 @@ body {
 }
 
 footer {
-  height: 390px;
+  height: 140px;
   overflow-y: hidden;
 }
 

@@ -24,6 +24,7 @@ const hoverGallery_02 = galleries_02
 console.log(galleries);
 console.log(galleries_02);
 
+const boat = document.querySelector(".boat")
 const gallery_sec = document.querySelectorAll(".gallery_02");
 // console.log(gallery_sec);
 const gallery = document.querySelectorAll(".gallery");
@@ -31,20 +32,51 @@ console.log(gallery);
 const videoGallery = document.querySelectorAll(".video_style");
 const video_container = document.querySelector(".vdieo_gallery");
 console.log(video_container);
-const videos = Array.from(document.querySelectorAll(".vdieo_gallery video"))
-// console.log(video_v);
+const videos = document.querySelectorAll(".vdieo_gallery video")
+console.log(videos);
 
-// for (let i=0; i< video_v.length; i++) {
-//   video_v[i].muted = true;
-//   video_v[i].autoplay = true;
-//   video_v[i].loop = true;
-//   video_v[i].playsInline = true;
-//   video_v[i].preload = "none";
-//   video_v[i].play();
-//   console.log("muted done");
+for (let i=0; i< videos.length; i++) {
+  videos[i].muted = true;
+}
 
- 
-// }
+
+
+video_container.addEventListener('mouseover',() => {
+  const clickEvent = new MouseEvent("click", {
+    bubbles:true,
+    cancelable:true,
+    view:window
+  })
+  
+  video_container.dispatchEvent(clickEvent)
+  console.log("hover_done");
+})
+boat.addEventListener('mouseover',() => {
+  const clickEvent = new MouseEvent("click", {
+    bubbles:true,
+    cancelable:true,
+    view:window
+  })
+  
+  boat.dispatchEvent(clickEvent)
+  console.log("hover_done");
+})
+
+
+videos.forEach((video) => {
+  video.addEventListener("mouseover", () => {
+    // videos.forEach(video => video.pause())
+    video.muted = false
+    video.currentTime = 0;
+    video.play();
+  });
+
+  video.addEventListener("mouseout", () => {
+    videos.forEach(video => video.play())
+    video.muted = true;
+
+  })
+})
 
 
 //  video_v.forEach((video) => {
@@ -85,33 +117,25 @@ const videos = Array.from(document.querySelectorAll(".vdieo_gallery video"))
 //   })
 // })
 
-function playVideoWithAudio (video) {
-  video.play();
-  video.currentTime = 0;
-  video.muted = false;
+// function playVideoWithAudio (video) {
+//   video.play();
+//   video.currentTime = 0;
+//   video.muted = false;
 
-  videos.forEach((v) => {
-    if(v !== video) {
-      v.muted = true;
-    }
-  })
-}
+//   videos.forEach((v) => {
+//     if(v !== video) {
+//       v.muted = true;
+//     }
+//   })
+// }
 
-videos.forEach((video) => {
-  video.addEventListener("mouseover", () => {
-    playVideoWithAudio(video)
-  });
 
-  video.addEventListener("mouseout", () => {
-    video.muted = true;
-  })
-})
 
 
 // video_v.play()
 videoGallery.forEach((video_style) => {
   video_style.addEventListener("mouseover", () => {
-    isHovering = true; 
+    isHovering = true;
     // video_style.forEach(video_style => video_style.classList.remove('up'))
     // video_style.classList.add('up')
     // video_style.style.zIndex = "1"
@@ -181,6 +205,8 @@ videoGallery.forEach((video_style) => {
       scale: 1.5, 
       zIndex: 9999, 
       duration: 0.3 ,
+
+
     
     });
 

@@ -491,6 +491,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  top: 120px;
   /* height: 1500px; */
 }
 .webgl {
@@ -572,7 +573,7 @@ body {
   width: 300%;
   position: relative;
   /* overflow: hidden; */
-  bottom: 120px;
+  bottom: 0px;
 }
 
 .galleries {
@@ -673,4 +674,27 @@ footer {
   background-color: #002cc4;
   /* bottom: 120px; */
   z-index: -1;
+}
+
+/* .vdieo_gallery h1 {
+  font-size: 2rem;
+  text-align: center;
+} */
+
+.text {
+  font-family: "Roboto";
+  width: 100%;
+  margin-bottom: 0.5rem;
+  /* z-index: 5; */
+  /* margin-bottom: 1rem; */
+
+}
+
+.text h1 {
+  /* margin-top: 3rem; */
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 100;
+  letter-spacing: 0.8rem;
+
 }

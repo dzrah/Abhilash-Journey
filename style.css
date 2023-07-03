@@ -606,11 +606,11 @@ body {
   /* overflow: hidden; */
   display: flex;
   position: relative;
-  animation-name: anim;
+  /* animation-name: anim;
   animation-duration: 60s;
   animation-play-state: running;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
   width: 100%;
   gap: 5px;
   /* z-index: 1; */

@@ -167,7 +167,7 @@ videoGallery.forEach((video_style) => {
           // gallery[i].classList.remove("gallery");
           // gallery[i].classList.add("gallery_stop");
           gallery[i].style.animationPlayState = "paused";
-          gallery_sec[i].style.animationPlayState = "paused";
+          // gallery_sec[i].style.animationPlayState = "paused";
           
           hoverGallery.onmouseover = function() {
             hoverGallery.style.zIndex = "999999";
@@ -243,7 +243,7 @@ videoGallery.forEach((video_style) => {
           // gallery_sec[i].classList.remove("gallery_02_stop");
           // gallery_sec[i].classList.add("gallery_02");
           gallery[i].style.animationPlayState = "running";
-          gallery_sec[i].style.animationPlayState = "running";
+          // gallery_sec[i].style.animationPlayState = "running";
           // hoverGallery.style.zIndex = ("4")
           hoverGallery.onmouseout = function() {
             hoverGallery.style.zIndex = "1";

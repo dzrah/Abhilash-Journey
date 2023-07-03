@@ -12,7 +12,7 @@ body {
   /* overflow-x: hidden;
   overflow-y: hidden; */
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .loader {
@@ -554,12 +554,12 @@ body {
   }
 
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
 }
 @keyframes anim_rev {
   0% {
-    transform: translateX(-200%);
+    transform: translateX(-50%);
   }
 
   100% {
@@ -570,7 +570,7 @@ body {
 .vdieo_gallery {
   display: flex;
   flex-direction: column;
-  width: 300%;
+  width: 100%;
   position: relative;
   /* overflow: hidden; */
   bottom: 0px;
@@ -578,7 +578,8 @@ body {
 
 .galleries {
   display: flex;
-  width: 100%;
+  /* flex-direction: row-reverse; */
+  width: 200%;
   gap: 5px;
   position: relative;
   z-index: 1;
@@ -606,15 +607,23 @@ body {
   /* overflow: hidden; */
   display: flex;
   position: relative;
-  /* animation-name: anim;
+  animation-name: anim;
   animation-duration: 60s;
   animation-play-state: running;
   animation-timing-function: linear;
-  animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   width: 100%;
   gap: 5px;
   /* z-index: 1; */
 
+}
+
+/* .gallery .position_left {
+
+} */
+
+.position_left {
+  right:0px;
 }
 
 /* .gallery_stop {
@@ -648,7 +657,7 @@ body {
 /* } */
 
 .video_style {
-  width: 20%;
+  width: 65%;
   /* overflow: hidden; */
   position: relative;
   /* z-index: 1; */

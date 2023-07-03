@@ -227,7 +227,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 /**
  * Textures
  */
-const bakedTexture = textureLoader.load("baked_018.jpg");
+const bakedTexture = textureLoader.load("material0_basecolor.png");
 bakedTexture.flipY = false;
 bakedTexture.encoding = THREE.sRGBEncoding;
 
@@ -251,8 +251,8 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("GGR_Boat_New_Home_34_scaled.gltf", (gltf) => {
-
+gltfLoader.load("rapid.gltf", (gltf) => {
+console.log("loading_done");
   const glass_01 = gltf.scene.children.find(child => child.name === 'glass_01')
   
 

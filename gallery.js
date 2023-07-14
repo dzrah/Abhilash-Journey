@@ -17,6 +17,7 @@ videos.forEach((video) => {
       videosound.addEventListener("mouseover", () => {
         videosound.muted = false;
         videosound.currentTime = 0;
+        videosound.play();
       });
     });
     gsap.to(video, { scale: 1.3, duration: 0.8, ease: "power2", zIndex: 9999 });

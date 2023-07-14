@@ -1,0 +1,282 @@
+ // onLeave() {
+      //   gsap.to(
+      //     ".ver_line_02",
+      //     {
+      //       height: 200,
+      //       transformOrigin: "top top",
+      //       ease: "power2",
+      //       duration: 3,
+      //     },
+      //     "-=28",
+      //   );
+      // },
+
+
+
+
+       // let gispyContainer = document.querySelector(".circle_line_gispy");
+  // gispyContainer.addEventListener("wheel", (e) => {
+  //   e.stopPropagation();
+  // });
+
+
+
+
+   // let gispyBoat = {
+  //   container: document.querySelector(".gispy_two"),
+  //   renderer: "svg",
+  //   loop: false,
+  //   autoplay: false,
+  //   path: "LottieAnimation/GISPY_Boat.json",
+  // };
+
+  // let gispyBoatAnim = bodymovin.loadAnimation(gispyBoat);
+
+  // function playAnimOnScoll(options) {
+  //   LottieScrollTrigger({
+  //     trigger: options.trigger,
+  //     markers: true,
+  //     start: "center 50%",
+  //     toggleActions: "play restart play reset",
+  //     onEnter: function () {
+  //       options.anim.play();
+  //     },
+  //   });
+  // }
+
+  // playAnimOnScoll({
+  //   trigger: ".float_left",
+  //   anim: gispyBoatAnim,
+  //   pin: true,
+  // });
+
+
+
+
+
+
+
+
+// /**
+//  * Video Gallery
+//  */
+
+// let isHovering = false;
+// const galleries = document.querySelector(".galleries");
+// const galleries_02 = document.querySelector(".galleries_02");
+// const hoverGallery = galleries;
+// const hoverGallery_02 = galleries_02;
+// console.log(galleries);
+// console.log(galleries_02);
+
+// const boat = document.querySelector(".boat");
+// const gallery_sec = document.querySelectorAll(".gallery_02");
+// // console.log(gallery_sec);
+// const gallery = document.querySelectorAll(".gallery");
+// console.log(gallery);
+// const videoGallery = document.querySelectorAll(".video_style");
+// const video_container = document.querySelector(".vdieo_gallery");
+// console.log(video_container);
+// const videos = document.querySelectorAll(".vdieo_gallery video");
+// console.log(videos);
+
+// for (let i = 0; i < videos.length; i++) {
+//   videos[i].muted = true;
+// }
+
+// video_container.addEventListener("mouseover", () => {
+//   const clickEvent = new MouseEvent("click", {
+//     bubbles: true,
+//     cancelable: true,
+//     view: window,
+//   });
+
+//   video_container.dispatchEvent(clickEvent);
+//   console.log("hover_done");
+// });
+// boat.addEventListener("mouseover", () => {
+//   const clickEvent = new MouseEvent("click", {
+//     bubbles: true,
+//     cancelable: true,
+//     view: window,
+//   });
+
+//   boat.dispatchEvent(clickEvent);
+//   console.log("hover_done");
+// });
+
+// videos.forEach((video) => {
+//   video.addEventListener("mouseover", () => {
+//     // videos.forEach(video => video.pause())
+//     video.muted = false;
+//     video.currentTime = 0;
+//     video.play();
+//   });
+
+//   video.addEventListener("mouseout", () => {
+//     videos.forEach((video) => video.play());
+//     video.muted = true;
+//   });
+// });
+
+// //  video_v.forEach((video) => {
+// //     video.addEventListener("mouseover", () => {
+// //       for (let i=0; i< video_v.length; i++) {
+// //         video_v[i].pause();
+// //         video_v[i].muted = true;
+// //         console.log("muted done");
+// //       }
+// //       video_v.forEach(video => video.muted = true)
+// //       video.muted = false;
+// //       video.play();
+// //       // video.currentTime = 0
+
+// //       console.log("video_muted");
+// //     })
+// //   })
+
+// // video_v.forEach((video) => {
+// //   video.addEventListener("mouseout", () => {
+// //     video_v.forEach(video => video.muted = true)
+// //     for (let i=0; i< video_v.length; i++) {
+// //       video_v[i].muted = true;
+// //       video_v[i].autoplay = true;
+// //       video_v[i].loop = true;
+// //       video_v[i].playsInline = true;
+// //       video_v[i].preload = "none";
+// //       video_v[i].play();
+// //       console.log("muted done");
+
+// //     }
+// //     video.muted = true;
+// //     // video.play();
+// //     // video.pause();
+// //     console.log("video_muted");
+// //   })
+// // })
+
+// // function playVideoWithAudio (video) {
+// //   video.play();
+// //   video.currentTime = 0;
+// //   video.muted = false;
+
+// //   videos.forEach((v) => {
+// //     if(v !== video) {
+// //       v.muted = true;
+// //     }
+// //   })
+// // }
+
+// // video_v.play()
+// videoGallery.forEach((video_style) => {
+//   video_style.addEventListener("mouseover", () => {
+//     isHovering = true;
+//     // video_style.forEach(video_style => video_style.classList.remove('up'))
+//     // video_style.classList.add('up')
+//     // video_style.style.zIndex = "1"
+//     gallery.forEach((gallery_selected) => {
+//       gallery_selected.addEventListener("mouseover", () => {
+//         gallery.forEach((gallery_selected) =>
+//           gallery_selected.classList.remove("gallery_up"),
+//         );
+//         gallery_selected.classList.add("gallery_up");
+//         // gallery_selected.style.zIndex = "9999"
+//         console.log(gallery_selected);
+//       });
+//     });
+//     gallery_sec.forEach((gallery_selected) => {
+//       gallery_selected.addEventListener("mouseover", () => {
+//         gallery_sec.forEach((gallery_selected) =>
+//           gallery_selected.classList.remove("gallery_up"),
+//         );
+//         gallery_selected.classList.add("gallery_up");
+//         // gallery_selected.style.zIndex = "9999"
+//         console.log(gallery_selected);
+//       });
+//     });
+
+//     gsap.to(video_style, {
+//       onStart: function () {
+//         for (let i = 0; i < gallery.length; i++) {
+//           // gallery[i].classList.remove("gallery");
+//           // gallery[i].classList.add("gallery_stop");
+//           gallery[i].style.animationPlayState = "paused";
+//           // gallery_sec[i].style.animationPlayState = "paused";
+
+//           hoverGallery.onmouseover = function () {
+//             hoverGallery.style.zIndex = "999999";
+//             hoverGallery_02.style.zIndex = "1";
+//             console.log("done");
+//           };
+
+//           hoverGallery_02.onmouseover = function () {
+//             hoverGallery.style.zIndex = "1";
+//             hoverGallery_02.style.zIndex = "999999";
+//             console.log("done_02");
+//           };
+
+//           // console.log(galleries[i]);
+//           // if (hoverGallery) {
+//           //   gallery[i].classList.add('up')
+//           // } else {
+//           //   gallery_sec[i].classList.add('up')
+//           // }
+
+//           // gallery_sec[i].classList.remove("gallery_02");
+//           // gallery_sec[i].classList.add("gallery_02_stop");
+//         }
+//       },
+//       scale: 1.5,
+//       zIndex: 9999,
+//       duration: 0.3,
+//     });
+
+//     // video_v.muted = false;
+//     // for (let i = 0; i< gallery.length; i++) {
+//     //   console.log(gallery[i]);
+
+//     //   gallery[i].classlist.remove("gallery")
+//     //     gallery[i].className.add("gallery_stop")
+
+//     //   gallery[i].classlist.remove("gallery_02")
+//     //     gallery[i].className.add("gallery_02_stop")
+
+//     // }
+//   });
+
+//   video_style.addEventListener("mouseout", () => {
+//     isHovering = false;
+//     gsap.to(video_style, {
+//       scale: 1,
+//       zIndex: 0,
+//       duration: 0.5,
+//       onStart: function () {
+//         for (let i = 0; i < gallery.length; i++) {
+//           // gallery[i].classList.remove("gallery_stop");
+//           // gallery[i].classList.add("gallery");
+//           // gallery_sec[i].classList.remove("gallery_02_stop");
+//           // gallery_sec[i].classList.add("gallery_02");
+//           gallery[i].style.animationPlayState = "running";
+//           // gallery_sec[i].style.animationPlayState = "running";
+//           // hoverGallery.style.zIndex = ("4")
+//           hoverGallery.onmouseout = function () {
+//             hoverGallery.style.zIndex = "1";
+//             hoverGallery_02.style.zIndex = "0";
+//           };
+
+//           hoverGallery_02.onmouseout = function () {
+//             hoverGallery.style.zIndex = "1";
+//             hoverGallery_02.style.zIndex = "0";
+//           };
+//         }
+//       },
+//     });
+
+//     // if (gallery.classlist.contains("gallery_stop")) {
+//     //   gallery.className.toggle("gallery")
+//     // }
+//     // if (gallery.classlist.contains("gallery_02_stop")) {
+//     //   gallery.className.toggle("gallery_02")
+//     // }
+//   });
+// });

@@ -9,8 +9,14 @@ html,
 body {
   font-family: "Montserrat";
   height: 100%;
+
   /* overflow-x: hidden; */
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
+}
+
+#main {
+  position: relative;
+  overflow: hidden;
 }
 
 .loader {
@@ -422,27 +428,52 @@ body {
   opacity: 1;
   position: relative;
 }
+
+/* .video-background {
+  width: 95%;
+} */
+
+/* .canvas_container {
+  position: relative;
+  width: 30vw;
+  height: 30vh;
+} */
 .gispy_two {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   /* padding: 0;
   margin: 0; */
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 65%;
+  /* max-width: 30vw;
+  max-height: 30vh; */
+  /* height: 50vh; */
+  /* border: solid 1px #000; */
+  /* object-fit: cover; */
+}
+
+.gispy_two video {
+  width: 100%;
   border: solid 1px #000;
 }
 
+/* .gispy_two canvas img {
+  opacity: 0;
+} */
+
 .ggr_two {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 0;
-  margin: 0; */
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 65%;
+}
+.ggr_two video {
+  width: 100%;
   border: solid 1px #000;
 }
+
 .ggr_two img {
   width: 100%;
 }
@@ -455,6 +486,10 @@ body {
   width: 65%;
   border: solid 1px #000;
   float: right;
+}
+
+.queen_01 video {
+  width: 100%;
 }
 
 .img_text {
@@ -484,15 +519,16 @@ body {
 
 .float_left {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
+  width: 100%;
 }
-.float_left div {
+/* .float_left div {
   grid-area: 1/1;
 }
 .float_left img:first-child {
   z-index: 2;
-}
+} */
 .float_right {
   display: flex;
   align-items: center;
@@ -817,7 +853,7 @@ footer {
 .text {
   font-family: "Roboto";
   width: 100%;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   /* z-index: 5; */
   /* margin-bottom: 1rem; */
 }

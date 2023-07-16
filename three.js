@@ -4,8 +4,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Stats from "https://cdnjs.cloudflare.com/ajax/libs/stats.js/17/Stats.js";
-import { Water } from "three/examples/jsm/objects/Water.js";
-import { Sky } from "three/examples/jsm/objects/Sky.js";
 
 // import { gsap } from "gsap";
 // import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
@@ -253,7 +251,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("Boat/Boat.gltf", (gltf) => {
+gltfLoader.load("Boat/Boat_02.gltf", (gltf) => {
   console.log("loading_done");
   const glass_01 = gltf.scene.children.find(
     (child) => child.name === "glass_01",

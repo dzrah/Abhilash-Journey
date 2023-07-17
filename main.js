@@ -177,43 +177,43 @@ mm.add("(min-width: 800px)", () => {
    * Gipsy Section LottieAnimation
    */
 
-  // let playhead = { frame: 0, totalFrames: 0 };
-  // let totalFrames = 0;
-  // let animation = lottie.loadAnimation({
-  //   container: document.querySelector(".gispy_two"),
-  //   renderer: "svg",
-  //   loop: false,
-  //   autoplay: false,
-  //   path: "LottieAnimation/GISPY_Boat_F.json",
-  // });
+  let playhead = { frame: 0, totalFrames: 0 };
+  let totalFrames = 0;
+  let animation = lottie.loadAnimation({
+    container: document.querySelector(".gispy_two"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/GISPY_Boat_F.json",
+  });
 
-  // animation.addEventListener("DOMLoaded", function () {
-  //   // no idea why this isn't being called?
-  //   // console.log("loaded");
-  //   // console.log(animation.totalFrames);
-  //   playhead.totalFrames = animation.totalFrames - 1;
-  //   ScrollTrigger.refresh();
-  // });
+  animation.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead.totalFrames = animation.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
 
-  // gsap.to(playhead, {
-  //   frame: () => playhead.totalFrames,
-  //   ease: "none",
-  //   onUpdate: () => {
-  //     // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
-  //     animation.goToAndStop(playhead.frame, true);
-  //   },
-  //   scrollTrigger: {
-  //     trigger: ".circle_line_gispy",
-  //     start: "top top",
-  //     end: "300% center",
-  //     // markers: true,
-  //     scrub: 2,
-  //     // pinSpacing: true,
-  //     pin: ".circle_line_gispy",
-  //     // pinType: "fixed",
-  //     invalidateOnRefresh: true,
-  //   },
-  // });
+  gsap.to(playhead, {
+    frame: () => playhead.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation.goToAndStop(playhead.frame, true);
+    },
+    scrollTrigger: {
+      trigger: ".circle_line_gispy",
+      start: "top top",
+      end: "300% center",
+      // markers: true,
+      scrub: 2,
+      // pinSpacing: true,
+      pin: ".circle_line_gispy",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
+    },
+  });
 
   //   function canvas() {
   //     const canvas = document.querySelector(".gispy_two");
@@ -393,78 +393,78 @@ mm.add("(min-width: 800px)", () => {
   //   }
   //   canvas();
 
-  console.clear();
-  /* The encoding is super important here to enable frame-by-frame scrubbing. */
+  // console.clear();
+  // /* The encoding is super important here to enable frame-by-frame scrubbing. */
 
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
 
-  const video = document.querySelector(".video-background");
-  let src = video.currentSrc || video.src;
-  console.log(video, src);
+  // const video = document.querySelector(".video-background");
+  // let src = video.currentSrc || video.src;
+  // console.log(video, src);
 
-  /* Make sure the video is 'activated' on iOS */
-  function once(el, event, fn, opts) {
-    var onceFn = function (e) {
-      el.removeEventListener(event, onceFn);
-      fn.apply(this, arguments);
-    };
-    el.addEventListener(event, onceFn, opts);
-    return onceFn;
-  }
+  // /* Make sure the video is 'activated' on iOS */
+  // function once(el, event, fn, opts) {
+  //   var onceFn = function (e) {
+  //     el.removeEventListener(event, onceFn);
+  //     fn.apply(this, arguments);
+  //   };
+  //   el.addEventListener(event, onceFn, opts);
+  //   return onceFn;
+  // }
 
-  once(document.documentElement, "touchstart", function (e) {
-    video.play();
-    video.pause();
-  });
+  // once(document.documentElement, "touchstart", function (e) {
+  //   video.play();
+  //   video.pause();
+  // });
 
   /* ---------------------------------- */
   /* Scroll Control! */
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  let tl = gsap.timeline({
-    defaults: { duration: 1 },
-    scrollTrigger: {
-      trigger: ".circle_line_gispy",
-      start: "top top",
-      end: "300% center",
-      scrub: 2,
-      pin: ".circle_line_gispy",
-    },
-  });
+  // let tl = gsap.timeline({
+  //   defaults: { duration: 1 },
+  //   scrollTrigger: {
+  //     trigger: ".circle_line_gispy",
+  //     start: "top top",
+  //     end: "300% center",
+  //     scrub: 2,
+  //     pin: ".circle_line_gispy",
+  //   },
+  // });
 
-  once(video, "loadedmetadata", () => {
-    tl.fromTo(
-      video,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video.duration || 1,
-      },
-    );
-  });
+  // once(video, "loadedmetadata", () => {
+  //   tl.fromTo(
+  //     video,
+  //     {
+  //       currentTime: 0,
+  //     },
+  //     {
+  //       currentTime: video.duration || 1,
+  //     },
+  //   );
+  // });
 
-  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src)
-        .then((response) => response.blob())
-        .then((response) => {
-          var blobURL = URL.createObjectURL(response);
+  // /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  // setTimeout(function () {
+  //   if (window["fetch"]) {
+  //     fetch(src)
+  //       .then((response) => response.blob())
+  //       .then((response) => {
+  //         var blobURL = URL.createObjectURL(response);
 
-          var t = video.currentTime;
-          once(document.documentElement, "touchstart", function (e) {
-            video.play();
-            video.pause();
-          });
+  //         var t = video.currentTime;
+  //         once(document.documentElement, "touchstart", function (e) {
+  //           video.play();
+  //           video.pause();
+  //         });
 
-          video.setAttribute("src", blobURL);
-          video.currentTime = t + 0.01;
-        });
-    }
-  }, 1000);
+  //         video.setAttribute("src", blobURL);
+  //         video.currentTime = t + 0.01;
+  //       });
+  //   }
+  // }, 1000);
 
   /* ---------------------------------- */
 
@@ -538,120 +538,120 @@ mm.add("(min-width: 800px)", () => {
    * Queen Section LottieAnimation
    */
 
-  // let playhead_02 = { frame: 0, totalFrames: 0 };
-  // let totalFrames_02 = 0;
-  // let animation_02 = lottie.loadAnimation({
-  //   container: document.querySelector(".queen_01"),
-  //   renderer: "svg",
-  //   loop: false,
-  //   autoplay: false,
-  //   path: "LottieAnimation/Queen.json",
-  // });
-
-  // console.log(animation_02.totalFrames);
-
-  // animation_02.addEventListener("DOMLoaded", function () {
-  //   // no idea why this isn't being called?
-  //   // console.log("loaded");
-  //   // console.log(animation.totalFrames);
-  //   playhead_02.totalFrames = animation_02.totalFrames - 1;
-  //   ScrollTrigger.refresh();
-  // });
-  // // ScrollTrigger.normalizeScroll(true);
-
-  // gsap.to(playhead_02, {
-  //   frame: () => playhead_02.totalFrames,
-  //   ease: "none",
-  //   onUpdate: () => {
-  //     // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
-  //     animation_02.goToAndStop(playhead_02.frame, true);
-  //   },
-  //   scrollTrigger: {
-  //     trigger: ".circle_line_queen",
-  //     start: "0% 42%",
-  //     end: "300% center",
-  //     // markers: true,
-  //     scrub: 2,
-  //     // pinSpacing: true,
-  //     pin: ".circle_line_queen",
-  //     // pinType: "fixed",
-  //     invalidateOnRefresh: true,
-  //   },
-  // });
-
-  console.clear();
-  /* The encoding is super important here to enable frame-by-frame scrubbing. */
-
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
-
-  const video2 = document.querySelector(".video-background2");
-  let src2 = video2.currentSrc || video2.src2;
-  console.log(video2);
-  console.log(src2);
-
-  /* Make sure the video is 'activated' on iOS */
-  function once(el2, event2, fn2, opts2) {
-    var onceFn2 = function (e2) {
-      el2.removeEventListener(event2, onceFn2);
-      fn2.apply(this, arguments);
-    };
-    el2.addEventListener(event2, onceFn2, opts2);
-    return onceFn2;
-  }
-
-  once(document.documentElement, "touchstart", function (e2) {
-    video2.play();
-    video2.pause();
+  let playhead_02 = { frame: 0, totalFrames: 0 };
+  let totalFrames_02 = 0;
+  let animation_02 = lottie.loadAnimation({
+    container: document.querySelector(".queen_01"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/Queen.json",
   });
 
-  /* ---------------------------------- */
-  /* Scroll Control! */
+  console.log(animation_02.totalFrames);
 
-  // gsap.registerPlugin(ScrollTrigger);
+  animation_02.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead_02.totalFrames = animation_02.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
+  // ScrollTrigger.normalizeScroll(true);
 
-  let tl2 = gsap.timeline({
-    defaults: { duration: 1 },
+  gsap.to(playhead_02, {
+    frame: () => playhead_02.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation_02.goToAndStop(playhead_02.frame, true);
+    },
     scrollTrigger: {
       trigger: ".circle_line_queen",
       start: "0% 42%",
       end: "300% center",
+      // markers: true,
       scrub: 2,
+      // pinSpacing: true,
       pin: ".circle_line_queen",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
     },
   });
 
-  once(video2, "loadedmetadata", () => {
-    tl2.fromTo(
-      video2,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video2.duration || 1,
-      },
-    );
-  });
+  // console.clear();
+  // /* The encoding is super important here to enable frame-by-frame scrubbing. */
 
-  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src2)
-        .then((response2) => response2.blob())
-        .then((response2) => {
-          var blobURL2 = URL.createObjectURL(response2);
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
 
-          var t2 = video2.currentTime;
-          once(document.documentElement, "touchstart", function (e2) {
-            video2.play();
-            video2.pause();
-          });
+  // const video2 = document.querySelector(".video-background2");
+  // let src2 = video2.currentSrc || video2.src2;
+  // console.log(video2);
+  // console.log(src2);
 
-          video2.setAttribute("src", blobURL2);
-          video2.currentTime = t2 + 0.01;
-        });
-    }
-  }, 1000);
+  // /* Make sure the video is 'activated' on iOS */
+  // function once(el2, event2, fn2, opts2) {
+  //   var onceFn2 = function (e2) {
+  //     el2.removeEventListener(event2, onceFn2);
+  //     fn2.apply(this, arguments);
+  //   };
+  //   el2.addEventListener(event2, onceFn2, opts2);
+  //   return onceFn2;
+  // }
+
+  // once(document.documentElement, "touchstart", function (e2) {
+  //   video2.play();
+  //   video2.pause();
+  // });
+
+  // /* ---------------------------------- */
+  // /* Scroll Control! */
+
+  // // gsap.registerPlugin(ScrollTrigger);
+
+  // let tl2 = gsap.timeline({
+  //   defaults: { duration: 1 },
+  //   scrollTrigger: {
+  //     trigger: ".circle_line_queen",
+  //     start: "0% 42%",
+  //     end: "300% center",
+  //     scrub: 2,
+  //     pin: ".circle_line_queen",
+  //   },
+  // });
+
+  // once(video2, "loadedmetadata", () => {
+  //   tl2.fromTo(
+  //     video2,
+  //     {
+  //       currentTime: 0,
+  //     },
+  //     {
+  //       currentTime: video2.duration || 1,
+  //     },
+  //   );
+  // });
+
+  // /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  // setTimeout(function () {
+  //   if (window["fetch"]) {
+  //     fetch(src2)
+  //       .then((response2) => response2.blob())
+  //       .then((response2) => {
+  //         var blobURL2 = URL.createObjectURL(response2);
+
+  //         var t2 = video2.currentTime;
+  //         once(document.documentElement, "touchstart", function (e2) {
+  //           video2.play();
+  //           video2.pause();
+  //         });
+
+  //         video2.setAttribute("src", blobURL2);
+  //         video2.currentTime = t2 + 0.01;
+  //       });
+  //   }
+  // }, 1000);
 
   /* ---------------------------------- */
 
@@ -807,121 +807,121 @@ mm.add("(min-width: 800px)", () => {
    * GGR Section LottieAnimation
    */
 
-  console.clear();
-  /* The encoding is super important here to enable frame-by-frame scrubbing. */
+  // console.clear();
+  // /* The encoding is super important here to enable frame-by-frame scrubbing. */
 
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
 
-  const video3 = document.querySelector(".video-background3");
-  let src3 = video3.currentSrc || video2.src3;
-  console.log(video3);
-  console.log(src3);
+  // const video3 = document.querySelector(".video-background3");
+  // let src3 = video3.currentSrc || video2.src3;
+  // console.log(video3);
+  // console.log(src3);
 
-  /* Make sure the video is 'activated' on iOS */
-  function once(el3, event3, fn3, opts3) {
-    var onceFn3 = function (e3) {
-      el3.removeEventListener(event3, onceFn3);
-      fn3.apply(this, arguments);
-    };
-    el3.addEventListener(event3, onceFn3, opts3);
-    return onceFn3;
-  }
+  // /* Make sure the video is 'activated' on iOS */
+  // function once(el3, event3, fn3, opts3) {
+  //   var onceFn3 = function (e3) {
+  //     el3.removeEventListener(event3, onceFn3);
+  //     fn3.apply(this, arguments);
+  //   };
+  //   el3.addEventListener(event3, onceFn3, opts3);
+  //   return onceFn3;
+  // }
 
-  once(document.documentElement, "touchstart", function (e3) {
-    video3.play();
-    video3.pause();
+  // once(document.documentElement, "touchstart", function (e3) {
+  //   video3.play();
+  //   video3.pause();
+  // });
+
+  // /* ---------------------------------- */
+  // /* Scroll Control! */
+
+  // // gsap.registerPlugin(ScrollTrigger);
+
+  // let tl3 = gsap.timeline({
+  //   defaults: { duration: 1 },
+  //   scrollTrigger: {
+  //     trigger: ".sundy_times_ggr",
+  //     start: "0% top",
+  //     end: "300% center",
+  //     scrub: 2,
+  //     pin: ".sundy_times_ggr",
+  //   },
+  // });
+
+  // once(video3, "loadedmetadata", () => {
+  //   tl3.fromTo(
+  //     video3,
+  //     {
+  //       currentTime: 0,
+  //     },
+  //     {
+  //       currentTime: video3.duration || 1,
+  //     },
+  //   );
+  // });
+
+  // /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  // setTimeout(function () {
+  //   if (window["fetch"]) {
+  //     fetch(src3)
+  //       .then((response3) => response3.blob())
+  //       .then((response3) => {
+  //         var blobURL3 = URL.createObjectURL(response3);
+
+  //         var t3 = video3.currentTime;
+  //         once(document.documentElement, "touchstart", function (e3) {
+  //           video3.play();
+  //           video3.pause();
+  //         });
+
+  //         video3.setAttribute("src", blobURL3);
+  //         video3.currentTime = t3 + 0.01;
+  //       });
+  //   }
+  // }, 1000);
+
+  // /* ---------------------------------- */
+
+  let playhead_03 = { frame: 0, totalFrames: 0 };
+  let totalFrames_03 = 0;
+  let animation_03 = lottie.loadAnimation({
+    container: document.querySelector(".ggr_two"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/GGR_01.json",
   });
 
-  /* ---------------------------------- */
-  /* Scroll Control! */
+  console.log(animation_03.totalFrames);
 
-  // gsap.registerPlugin(ScrollTrigger);
+  animation_03.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead_03.totalFrames = animation_03.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
 
-  let tl3 = gsap.timeline({
-    defaults: { duration: 1 },
+  gsap.to(playhead_03, {
+    frame: () => playhead_03.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation_03.goToAndStop(playhead_03.frame, true);
+    },
     scrollTrigger: {
       trigger: ".sundy_times_ggr",
       start: "0% top",
       end: "300% center",
+      // markers: true,
       scrub: 2,
+      // pinSpacing: true,
       pin: ".sundy_times_ggr",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
     },
   });
-
-  once(video3, "loadedmetadata", () => {
-    tl3.fromTo(
-      video3,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video3.duration || 1,
-      },
-    );
-  });
-
-  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src3)
-        .then((response3) => response3.blob())
-        .then((response3) => {
-          var blobURL3 = URL.createObjectURL(response3);
-
-          var t3 = video3.currentTime;
-          once(document.documentElement, "touchstart", function (e3) {
-            video3.play();
-            video3.pause();
-          });
-
-          video3.setAttribute("src", blobURL3);
-          video3.currentTime = t3 + 0.01;
-        });
-    }
-  }, 1000);
-
-  /* ---------------------------------- */
-
-  //   let playhead_03 = { frame: 0, totalFrames: 0 };
-  //   let totalFrames_03 = 0;
-  //   let animation_03 = lottie.loadAnimation({
-  //     container: document.querySelector(".ggr_two"),
-  //     renderer: "svg",
-  //     loop: false,
-  //     autoplay: false,
-  //     path: "LottieAnimation/GGR_01.json",
-  //   });
-
-  //   console.log(animation_03.totalFrames);
-
-  //   animation_03.addEventListener("DOMLoaded", function () {
-  //     // no idea why this isn't being called?
-  //     // console.log("loaded");
-  //     // console.log(animation.totalFrames);
-  //     playhead_03.totalFrames = animation_03.totalFrames - 1;
-  //     ScrollTrigger.refresh();
-  //   });
-
-  //   gsap.to(playhead_03, {
-  //     frame: () => playhead_03.totalFrames,
-  //     ease: "none",
-  //     onUpdate: () => {
-  //       // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
-  //       animation_03.goToAndStop(playhead_03.frame, true);
-  //     },
-  //     scrollTrigger: {
-  //       trigger: ".sundy_times_ggr",
-  //       start: "0% top",
-  //       end: "300% center",
-  //       // markers: true,
-  //       scrub: 2,
-  //       // pinSpacing: true,
-  //       pin: ".sundy_times_ggr",
-  //       // pinType: "fixed",
-  //       invalidateOnRefresh: true,
-  //     },
-  //   });
 });
 
 /**
@@ -1098,43 +1098,43 @@ mm.add("(max-width: 615px)", () => {
    * Gipsy Section LottieAnimation
    */
 
-  // let playhead = { frame: 0, totalFrames: 0 };
-  // let totalFrames = 0;
-  // let animation = lottie.loadAnimation({
-  //   container: document.querySelector(".gispy_two"),
-  //   renderer: "svg",
-  //   loop: false,
-  //   autoplay: false,
-  //   path: "LottieAnimation/GISPY_Boat_F.json",
-  // });
+  let playhead = { frame: 0, totalFrames: 0 };
+  let totalFrames = 0;
+  let animation = lottie.loadAnimation({
+    container: document.querySelector(".gispy_two"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/GISPY_Boat_F.json",
+  });
 
-  // animation.addEventListener("DOMLoaded", function () {
-  //   // no idea why this isn't being called?
-  //   // console.log("loaded");
-  //   // console.log(animation.totalFrames);
-  //   playhead.totalFrames = animation.totalFrames - 1;
-  //   ScrollTrigger.refresh();
-  // });
+  animation.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead.totalFrames = animation.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
 
-  // gsap.to(playhead, {
-  //   frame: () => playhead.totalFrames,
-  //   ease: "none",
-  //   onUpdate: () => {
-  //     // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
-  //     animation.goToAndStop(playhead.frame, true);
-  //   },
-  //   scrollTrigger: {
-  //     trigger: ".circle_line_gispy",
-  //     start: "top top",
-  //     end: "300% center",
-  //     // markers: true,
-  //     scrub: 2,
-  //     // pinSpacing: true,
-  //     pin: ".circle_line_gispy",
-  //     // pinType: "fixed",
-  //     invalidateOnRefresh: true,
-  //   },
-  // });
+  gsap.to(playhead, {
+    frame: () => playhead.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation.goToAndStop(playhead.frame, true);
+    },
+    scrollTrigger: {
+      trigger: ".circle_line_gispy",
+      start: "top top",
+      end: "300% center",
+      // markers: true,
+      scrub: 2,
+      // pinSpacing: true,
+      pin: ".circle_line_gispy",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
+    },
+  });
 
   //   function canvas() {
   //     const canvas = document.querySelector(".gispy_two");
@@ -1314,78 +1314,78 @@ mm.add("(max-width: 615px)", () => {
   //   }
   //   canvas();
 
-  console.clear();
-  /* The encoding is super important here to enable frame-by-frame scrubbing. */
+  // console.clear();
+  // /* The encoding is super important here to enable frame-by-frame scrubbing. */
 
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
 
-  const video = document.querySelector(".video-background");
-  let src = video.currentSrc || video.src;
-  console.log(video, src);
+  // const video = document.querySelector(".video-background");
+  // let src = video.currentSrc || video.src;
+  // console.log(video, src);
 
-  /* Make sure the video is 'activated' on iOS */
-  function once(el, event, fn, opts) {
-    var onceFn = function (e) {
-      el.removeEventListener(event, onceFn);
-      fn.apply(this, arguments);
-    };
-    el.addEventListener(event, onceFn, opts);
-    return onceFn;
-  }
+  // /* Make sure the video is 'activated' on iOS */
+  // function once(el, event, fn, opts) {
+  //   var onceFn = function (e) {
+  //     el.removeEventListener(event, onceFn);
+  //     fn.apply(this, arguments);
+  //   };
+  //   el.addEventListener(event, onceFn, opts);
+  //   return onceFn;
+  // }
 
-  once(document.documentElement, "touchstart", function (e) {
-    video.play();
-    video.pause();
-  });
+  // once(document.documentElement, "touchstart", function (e) {
+  //   video.play();
+  //   video.pause();
+  // });
 
-  /* ---------------------------------- */
-  /* Scroll Control! */
+  // /* ---------------------------------- */
+  // /* Scroll Control! */
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  let tl = gsap.timeline({
-    defaults: { duration: 1 },
-    scrollTrigger: {
-      trigger: ".circle_line_gispy",
-      start: "top top",
-      end: "300% center",
-      scrub: 2,
-      pin: ".circle_line_gispy",
-    },
-  });
+  // let tl = gsap.timeline({
+  //   defaults: { duration: 1 },
+  //   scrollTrigger: {
+  //     trigger: ".circle_line_gispy",
+  //     start: "top top",
+  //     end: "300% center",
+  //     scrub: 2,
+  //     pin: ".circle_line_gispy",
+  //   },
+  // });
 
-  once(video, "loadedmetadata", () => {
-    tl.fromTo(
-      video,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video.duration || 1,
-      },
-    );
-  });
+  // once(video, "loadedmetadata", () => {
+  //   tl.fromTo(
+  //     video,
+  //     {
+  //       currentTime: 0,
+  //     },
+  //     {
+  //       currentTime: video.duration || 1,
+  //     },
+  //   );
+  // });
 
-  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src)
-        .then((response) => response.blob())
-        .then((response) => {
-          var blobURL = URL.createObjectURL(response);
+  // /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  // setTimeout(function () {
+  //   if (window["fetch"]) {
+  //     fetch(src)
+  //       .then((response) => response.blob())
+  //       .then((response) => {
+  //         var blobURL = URL.createObjectURL(response);
 
-          var t = video.currentTime;
-          once(document.documentElement, "touchstart", function (e) {
-            video.play();
-            video.pause();
-          });
+  //         var t = video.currentTime;
+  //         once(document.documentElement, "touchstart", function (e) {
+  //           video.play();
+  //           video.pause();
+  //         });
 
-          video.setAttribute("src", blobURL);
-          video.currentTime = t + 0.01;
-        });
-    }
-  }, 1000);
+  //         video.setAttribute("src", blobURL);
+  //         video.currentTime = t + 0.01;
+  //       });
+  //   }
+  // }, 1000);
 
   /* ---------------------------------- */
 
@@ -1459,120 +1459,120 @@ mm.add("(max-width: 615px)", () => {
    * Queen Section LottieAnimation
    */
 
-  // let playhead_02 = { frame: 0, totalFrames: 0 };
-  // let totalFrames_02 = 0;
-  // let animation_02 = lottie.loadAnimation({
-  //   container: document.querySelector(".queen_01"),
-  //   renderer: "svg",
-  //   loop: false,
-  //   autoplay: false,
-  //   path: "LottieAnimation/Queen.json",
-  // });
-
-  // console.log(animation_02.totalFrames);
-
-  // animation_02.addEventListener("DOMLoaded", function () {
-  //   // no idea why this isn't being called?
-  //   // console.log("loaded");
-  //   // console.log(animation.totalFrames);
-  //   playhead_02.totalFrames = animation_02.totalFrames - 1;
-  //   ScrollTrigger.refresh();
-  // });
-  // // ScrollTrigger.normalizeScroll(true);
-
-  // gsap.to(playhead_02, {
-  //   frame: () => playhead_02.totalFrames,
-  //   ease: "none",
-  //   onUpdate: () => {
-  //     // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
-  //     animation_02.goToAndStop(playhead_02.frame, true);
-  //   },
-  //   scrollTrigger: {
-  //     trigger: ".circle_line_queen",
-  //     start: "0% 42%",
-  //     end: "300% center",
-  //     // markers: true,
-  //     scrub: 2,
-  //     // pinSpacing: true,
-  //     pin: ".circle_line_queen",
-  //     // pinType: "fixed",
-  //     invalidateOnRefresh: true,
-  //   },
-  // });
-
-  console.clear();
-  /* The encoding is super important here to enable frame-by-frame scrubbing. */
-
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
-
-  const video2 = document.querySelector(".video-background2");
-  let src2 = video2.currentSrc || video2.src2;
-  console.log(video2);
-  console.log(src2);
-
-  /* Make sure the video is 'activated' on iOS */
-  function once(el2, event2, fn2, opts2) {
-    var onceFn2 = function (e2) {
-      el2.removeEventListener(event2, onceFn2);
-      fn2.apply(this, arguments);
-    };
-    el2.addEventListener(event2, onceFn2, opts2);
-    return onceFn2;
-  }
-
-  once(document.documentElement, "touchstart", function (e2) {
-    video2.play();
-    video2.pause();
+  let playhead_02 = { frame: 0, totalFrames: 0 };
+  let totalFrames_02 = 0;
+  let animation_02 = lottie.loadAnimation({
+    container: document.querySelector(".queen_01"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/Queen.json",
   });
 
-  /* ---------------------------------- */
-  /* Scroll Control! */
+  console.log(animation_02.totalFrames);
 
-  // gsap.registerPlugin(ScrollTrigger);
+  animation_02.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead_02.totalFrames = animation_02.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
+  // ScrollTrigger.normalizeScroll(true);
 
-  let tl2 = gsap.timeline({
-    defaults: { duration: 1 },
+  gsap.to(playhead_02, {
+    frame: () => playhead_02.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation_02.goToAndStop(playhead_02.frame, true);
+    },
     scrollTrigger: {
       trigger: ".circle_line_queen",
       start: "0% 42%",
       end: "300% center",
+      // markers: true,
       scrub: 2,
+      // pinSpacing: true,
       pin: ".circle_line_queen",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
     },
   });
 
-  once(video2, "loadedmetadata", () => {
-    tl2.fromTo(
-      video2,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video2.duration || 1,
-      },
-    );
-  });
+  // console.clear();
+  // /* The encoding is super important here to enable frame-by-frame scrubbing. */
 
-  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src2)
-        .then((response2) => response2.blob())
-        .then((response2) => {
-          var blobURL2 = URL.createObjectURL(response2);
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
 
-          var t2 = video2.currentTime;
-          once(document.documentElement, "touchstart", function (e2) {
-            video2.play();
-            video2.pause();
-          });
+  // const video2 = document.querySelector(".video-background2");
+  // let src2 = video2.currentSrc || video2.src2;
+  // console.log(video2);
+  // console.log(src2);
 
-          video2.setAttribute("src", blobURL2);
-          video2.currentTime = t2 + 0.01;
-        });
-    }
-  }, 1000);
+  // /* Make sure the video is 'activated' on iOS */
+  // function once(el2, event2, fn2, opts2) {
+  //   var onceFn2 = function (e2) {
+  //     el2.removeEventListener(event2, onceFn2);
+  //     fn2.apply(this, arguments);
+  //   };
+  //   el2.addEventListener(event2, onceFn2, opts2);
+  //   return onceFn2;
+  // }
+
+  // once(document.documentElement, "touchstart", function (e2) {
+  //   video2.play();
+  //   video2.pause();
+  // });
+
+  // /* ---------------------------------- */
+  // /* Scroll Control! */
+
+  // // gsap.registerPlugin(ScrollTrigger);
+
+  // let tl2 = gsap.timeline({
+  //   defaults: { duration: 1 },
+  //   scrollTrigger: {
+  //     trigger: ".circle_line_queen",
+  //     start: "0% 42%",
+  //     end: "300% center",
+  //     scrub: 2,
+  //     pin: ".circle_line_queen",
+  //   },
+  // });
+
+  // once(video2, "loadedmetadata", () => {
+  //   tl2.fromTo(
+  //     video2,
+  //     {
+  //       currentTime: 0,
+  //     },
+  //     {
+  //       currentTime: video2.duration || 1,
+  //     },
+  //   );
+  // });
+
+  // /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  // setTimeout(function () {
+  //   if (window["fetch"]) {
+  //     fetch(src2)
+  //       .then((response2) => response2.blob())
+  //       .then((response2) => {
+  //         var blobURL2 = URL.createObjectURL(response2);
+
+  //         var t2 = video2.currentTime;
+  //         once(document.documentElement, "touchstart", function (e2) {
+  //           video2.play();
+  //           video2.pause();
+  //         });
+
+  //         video2.setAttribute("src", blobURL2);
+  //         video2.currentTime = t2 + 0.01;
+  //       });
+  //   }
+  // }, 1000);
 
   /* ---------------------------------- */
 
@@ -1728,119 +1728,119 @@ mm.add("(max-width: 615px)", () => {
    * GGR Section LottieAnimation
    */
 
-  console.clear();
-  /* The encoding is super important here to enable frame-by-frame scrubbing. */
+  // console.clear();
+  // /* The encoding is super important here to enable frame-by-frame scrubbing. */
 
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
 
-  const video3 = document.querySelector(".video-background3");
-  let src3 = video3.currentSrc || video2.src3;
-  console.log(video3);
-  console.log(src3);
+  // const video3 = document.querySelector(".video-background3");
+  // let src3 = video3.currentSrc || video2.src3;
+  // console.log(video3);
+  // console.log(src3);
 
-  /* Make sure the video is 'activated' on iOS */
-  function once(el3, event3, fn3, opts3) {
-    var onceFn3 = function (e3) {
-      el3.removeEventListener(event3, onceFn3);
-      fn3.apply(this, arguments);
-    };
-    el3.addEventListener(event3, onceFn3, opts3);
-    return onceFn3;
-  }
+  // /* Make sure the video is 'activated' on iOS */
+  // function once(el3, event3, fn3, opts3) {
+  //   var onceFn3 = function (e3) {
+  //     el3.removeEventListener(event3, onceFn3);
+  //     fn3.apply(this, arguments);
+  //   };
+  //   el3.addEventListener(event3, onceFn3, opts3);
+  //   return onceFn3;
+  // }
 
-  once(document.documentElement, "touchstart", function (e3) {
-    video3.play();
-    video3.pause();
-  });
+  // once(document.documentElement, "touchstart", function (e3) {
+  //   video3.play();
+  //   video3.pause();
+  // });
+
+  // /* ---------------------------------- */
+  // /* Scroll Control! */
+
+  // // gsap.registerPlugin(ScrollTrigger);
+
+  // let tl3 = gsap.timeline({
+  //   defaults: { duration: 1 },
+  //   scrollTrigger: {
+  //     trigger: ".sundy_times_ggr",
+  //     start: "0% top",
+  //     end: "300% center",
+  //     scrub: 2,
+  //     pin: ".sundy_times_ggr",
+  //   },
+  // });
+
+  // once(video3, "loadedmetadata", () => {
+  //   tl3.fromTo(
+  //     video3,
+  //     {
+  //       currentTime: 0,
+  //     },
+  //     {
+  //       currentTime: video3.duration || 1,
+  //     },
+  //   );
+  // });
+
+  // /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  // setTimeout(function () {
+  //   if (window["fetch"]) {
+  //     fetch(src3)
+  //       .then((response3) => response3.blob())
+  //       .then((response3) => {
+  //         var blobURL3 = URL.createObjectURL(response3);
+
+  //         var t3 = video3.currentTime;
+  //         once(document.documentElement, "touchstart", function (e3) {
+  //           video3.play();
+  //           video3.pause();
+  //         });
+
+  //         video3.setAttribute("src", blobURL3);
+  //         video3.currentTime = t3 + 0.01;
+  //       });
+  //   }
+  // }, 1000);
 
   /* ---------------------------------- */
-  /* Scroll Control! */
 
-  // gsap.registerPlugin(ScrollTrigger);
+  let playhead_03 = { frame: 0, totalFrames: 0 };
+  let totalFrames_03 = 0;
+  let animation_03 = lottie.loadAnimation({
+    container: document.querySelector(".ggr_two"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/GGR_01.json",
+  });
 
-  let tl3 = gsap.timeline({
-    defaults: { duration: 1 },
+  console.log(animation_03.totalFrames);
+
+  animation_03.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead_03.totalFrames = animation_03.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
+
+  gsap.to(playhead_03, {
+    frame: () => playhead_03.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation_03.goToAndStop(playhead_03.frame, true);
+    },
     scrollTrigger: {
       trigger: ".sundy_times_ggr",
       start: "0% top",
       end: "300% center",
+      // markers: true,
       scrub: 2,
+      // pinSpacing: true,
       pin: ".sundy_times_ggr",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
     },
   });
-
-  once(video3, "loadedmetadata", () => {
-    tl3.fromTo(
-      video3,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video3.duration || 1,
-      },
-    );
-  });
-
-  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src3)
-        .then((response3) => response3.blob())
-        .then((response3) => {
-          var blobURL3 = URL.createObjectURL(response3);
-
-          var t3 = video3.currentTime;
-          once(document.documentElement, "touchstart", function (e3) {
-            video3.play();
-            video3.pause();
-          });
-
-          video3.setAttribute("src", blobURL3);
-          video3.currentTime = t3 + 0.01;
-        });
-    }
-  }, 1000);
-
-  /* ---------------------------------- */
-
-  //   let playhead_03 = { frame: 0, totalFrames: 0 };
-  //   let totalFrames_03 = 0;
-  //   let animation_03 = lottie.loadAnimation({
-  //     container: document.querySelector(".ggr_two"),
-  //     renderer: "svg",
-  //     loop: false,
-  //     autoplay: false,
-  //     path: "LottieAnimation/GGR_01.json",
-  //   });
-
-  //   console.log(animation_03.totalFrames);
-
-  //   animation_03.addEventListener("DOMLoaded", function () {
-  //     // no idea why this isn't being called?
-  //     // console.log("loaded");
-  //     // console.log(animation.totalFrames);
-  //     playhead_03.totalFrames = animation_03.totalFrames - 1;
-  //     ScrollTrigger.refresh();
-  //   });
-
-  //   gsap.to(playhead_03, {
-  //     frame: () => playhead_03.totalFrames,
-  //     ease: "none",
-  //     onUpdate: () => {
-  //       // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
-  //       animation_03.goToAndStop(playhead_03.frame, true);
-  //     },
-  //     scrollTrigger: {
-  //       trigger: ".sundy_times_ggr",
-  //       start: "0% top",
-  //       end: "300% center",
-  //       // markers: true,
-  //       scrub: 2,
-  //       // pinSpacing: true,
-  //       pin: ".sundy_times_ggr",
-  //       // pinType: "fixed",
-  //       invalidateOnRefresh: true,
-  //     },
-  //   });
 });

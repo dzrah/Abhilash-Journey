@@ -1029,7 +1029,7 @@ mm.add("(max-width: 615px)", () => {
   gipsyMoth.from(
     ".img_one_text",
     {
-      x: 30,
+      y: 30,
       autoAlpha: 0,
       ease: "power4",
       duration: 10,
@@ -1428,7 +1428,7 @@ mm.add("(max-width: 615px)", () => {
   queen.from(
     ".img_two_text",
     {
-      x: -30,
+      y: 30,
       autoAlpha: 0,
       ease: "power4",
       duration: 10,
@@ -1618,7 +1618,7 @@ mm.add("(max-width: 615px)", () => {
   ggr.from(
     ".img_text_grr",
     {
-      x: 30,
+      y: 30,
       autoAlpha: 0,
       ease: "power4",
       duration: 10,
@@ -1833,7 +1833,7 @@ mm.add("(max-width: 615px)", () => {
     },
     scrollTrigger: {
       trigger: ".sundy_times_ggr",
-      start: "0% top",
+      start: "0% -11%",
       end: "300% center",
       // markers: true,
       scrub: 2,

@@ -376,8 +376,24 @@ scene.add(camera);
 // scene.add(directionalLight)
 
 /**
- * Points
+ * Resizes
  */
+
+function onResize() {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  camera.aspect = w / h;
+  if (camera.aspect > 1) {
+    camera.position.z = -8;
+  } else {
+    camera.position.z = -15;
+  }
+  camera.updateProjectionMatrix();
+
+  //your other stuff ...
+}
+
+onResize();
 
 // const vid_01 = document.querySelector('.point_0')
 // const pointVideo = new CSS2DObject (vid_01)

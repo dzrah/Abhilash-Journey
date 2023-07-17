@@ -11,7 +11,7 @@ body {
   height: 100%;
 
   /* overflow-x: hidden; */
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 #main {

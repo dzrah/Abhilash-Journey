@@ -14,7 +14,8 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "gsap": "git+https://<dzrah>:<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>@github.com/<dzrah>/<Abhilash-Journey>.git",
+    "gsap": "npm:@gsap/shockingly@^3.12.2",
+    "gsap_package": "git+https://<dzrah>:<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>@github.com/<dzrah>/<Abhilash-Journey>.git",
     "three": "^0.153.0",
     "vercel": "^30.2.3"
   }

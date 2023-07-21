@@ -1,4 +1,18 @@
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { ScrollSmoother } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+ScrollSmoother.create({
+  content: "#content",
+  // wrapper: "#wrapper",
+  speed: 0.5,
+  normalizeScroll: false,
+  smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+  effects: true, // looks for data-speed and data-lag attributes on elements
+  smoothTouch: false, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+});
+// ScrollTrigger.normalizeScroll(true);
+
 // ScrollTrigger.normalizeScroll(true);
 
 /**
@@ -77,7 +91,7 @@ mm.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: ".circle_line_gispy",
       scrub: 2,
-      start: "top top",
+      start: "top 20%",
       end: "+=700",
       // pin: true,
       // pinSpacing: true,
@@ -85,6 +99,20 @@ mm.add("(min-width: 800px)", () => {
       // markers: true,
     },
   });
+  const gipsyMothPara = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".circle_line_gispy",
+      scrub: 2,
+      start: "top 20%",
+      end: "+=700",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03",
+      // markers: true,
+    },
+  });
+
+  gipsyMothPara.duration(6);
 
   gsap.from(".ver_line", {
     scrollTrigger: {
@@ -116,7 +144,7 @@ mm.add("(min-width: 800px)", () => {
     "-=10",
   );
 
-  gipsyMoth.to(
+  gipsyMothPara.to(
     ".paragraph_01",
     {
       autoAlpha: 0,
@@ -125,7 +153,7 @@ mm.add("(min-width: 800px)", () => {
     },
     "+=29.8",
   );
-  gipsyMoth.to(
+  gipsyMothPara.to(
     ".paragraph_02",
     {
       autoAlpha: 1,
@@ -134,7 +162,7 @@ mm.add("(min-width: 800px)", () => {
     },
     "-=1.8",
   );
-  gipsyMoth.to(
+  gipsyMothPara.to(
     ".paragraph_02_out",
     {
       autoAlpha: 0,
@@ -144,7 +172,7 @@ mm.add("(min-width: 800px)", () => {
     "+=12.8",
   );
 
-  gipsyMoth.to(
+  gipsyMothPara.to(
     ".paragraph_03",
     {
       autoAlpha: 1,
@@ -489,7 +517,7 @@ mm.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: ".circle_line_queen",
       scrub: 2,
-      start: "top top",
+      start: "top 50%",
       end: "+=700",
       // pin: true,
       // pinSpacing: true,
@@ -681,7 +709,7 @@ mm.add("(min-width: 800px)", () => {
       // pin: true,
       // pinSpacing: true,
       // endTrigger: ".ss_03",
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -1602,7 +1630,7 @@ mm.add("(max-width: 615px)", () => {
       // pin: true,
       // pinSpacing: true,
       // endTrigger: ".ss_03",
-      markers: true,
+      // markers: true,
     },
   });
 

@@ -4,6 +4,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Stats from "https://cdnjs.cloudflare.com/ajax/libs/stats.js/17/Stats.js";
+import { gsap } from "gsap";
 
 // import { gsap } from "gsap";
 // import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
@@ -374,6 +375,36 @@ scene.add(camera);
 // directionalLight.shadow.normalBias = 0.05
 // directionalLight.position.set(0.25, 3, - 2.25)
 // scene.add(directionalLight)
+
+// const ambientLight = new THREE.AmbientLight(0xffffff);
+// scene.add(ambientLight);
+
+// const spotLight = new THREE.SpotLight(0xffffff);
+// scene.add(spotLight);
+
+// spotLight.position.set(0, 8, 4);
+// spotLight.intensity = 1.2;
+// spotLight.angle = 0.45;
+// spotLight.penumbra = 0.3;
+
+// spotLight.castShadow = true;
+
+// spotLight.shadow.mapSize.width = 50;
+// spotLight.shadow.mapSize.height = 50;
+// spotLight.shadow.camera.near = 5;
+// spotLight.shadow.camera.far = 10;
+
+/**
+ * Plane floor for shadow
+ */
+
+// const planeGeo = new THREE.CylinderGeometry(100, 100, 20, 32);
+// const planeMat = new THREE.MeshPhongMaterial({ color: 0xffffff });
+// const floor = new THREE.Mesh(planeGeo, planeMat);
+// // floor.rotation.x = -0.5 * Math.PI;
+// // floor.position.y = -1.4;
+// scene.add(floor);
+// floor.receiveShadow = true;
 
 /**
  * Resizes

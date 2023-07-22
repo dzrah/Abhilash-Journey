@@ -107,7 +107,7 @@ mm.add("(min-width: 800px)", () => {
       end: "+=700",
       // pin: true,
       // pinSpacing: true,
-      // endTrigger: ".ss_03",
+      // endTrigger: ".ss_03"
       // markers: true,
     },
   });

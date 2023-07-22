@@ -186,10 +186,10 @@ mm.add("(min-width: 800px)", () => {
     ".ver_line_02",
     {
       scrollTrigger: {
-        trigger: ".ver_line_02",
+        trigger: ".circle_line_gispy",
         scrub: 1,
-        start: "top top",
-        end: "+=4000",
+        start: "top 0%",
+        end: "+=6000",
         // markers: true,
         // delay: 50,
       },
@@ -547,9 +547,9 @@ mm.add("(min-width: 800px)", () => {
     ".ver_line_04",
     {
       scrollTrigger: {
-        trigger: ".ver_line_04",
+        trigger: ".circle_line_queen",
         scrub: 1,
-        start: "top top",
+        start: "top 80%",
         end: "+=5000",
         // markers: true,
         // delay: 50,

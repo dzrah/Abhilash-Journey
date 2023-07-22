@@ -2,15 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { ScrollSmoother } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-ScrollSmoother.create({
-  content: "#content",
-  // wrapper: "#wrapper",
-  speed: 0.5,
-  normalizeScroll: false,
-  smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-  effects: true, // looks for data-speed and data-lag attributes on elements
-  smoothTouch: false, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-});
+
 // ScrollTrigger.normalizeScroll(true);
 
 // ScrollTrigger.normalizeScroll(true);
@@ -35,6 +27,15 @@ ScrollSmoother.create({
 let mm = gsap.matchMedia();
 
 mm.add("(min-width: 800px)", () => {
+  ScrollSmoother.create({
+    content: "#content",
+    // wrapper: "#wrapper",
+    speed: 0.5,
+    normalizeScroll: false,
+    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: true, // looks for data-speed and data-lag attributes on elements
+    smoothTouch: false, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+  });
   /**
    * Abhilash Journey Acroops the GGR Text & Three Photos Animation
    */

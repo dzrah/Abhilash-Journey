@@ -265,6 +265,7 @@ gltfLoader.load("Boat/Boat_02.gltf", (gltf) => {
   glass_01.material = glassMaterial;
 
   gltf.scene.scale.set(2, 2, 2);
+  // gltf.scene.rotateX(-0.05);
   // gltf.scene.rotation.set(0, 90, 0);
   // gltf.scene.position.set(0, -0.1, 0);
   scene.add(gltf.scene);
@@ -357,6 +358,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 camera.position.set(4, 1, -8);
+// camera.rotation.x(0.0002);
 scene.add(camera);
 // let minRotationX = -Math.PI / 4;
 // let maxRotationX = Math.PI / 4;

@@ -1,0 +1,14 @@
+@media screen and (min-width: 1024px) {
+  .img_con {
+    padding: 0 15rem;
+  }
+}
+/* @media screen and (min-width: 3200px) {
+  .img_con {
+    padding: 0 25rem;
+  }
+
+  .img_text {
+    padding: 0rem 12rem;
+  }
+} */

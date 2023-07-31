@@ -17,7 +17,7 @@ mm.add("(min-width: 800px)", () => {
     // normalizeScroll: true,
     smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
     effects: true, // looks for data-speed and data-lag attributes on elements
-    smoothTouch: false, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    smoothTouch: true, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   });
 
   // ScrollTrigger.normalizeScroll(true);
@@ -642,7 +642,7 @@ mm.add("(max-width: 615px)", () => {
   //   duration: 1.8,
   // });
 
-  ScrollTrigger.normalizeScroll(true);
+  // ScrollTrigger.normalizeScroll(true);
 
   /**
    * Abhilash Journey Acroops the GGR Text & Three Photos Animation

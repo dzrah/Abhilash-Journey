@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { ScrollSmoother } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+// ScrollTrigger.normalizeScroll(false);
 
 /**
  * Desktop Animation
@@ -644,6 +645,16 @@ mm.add("(max-width: 615px)", () => {
 
   // ScrollTrigger.normalizeScroll(true);
 
+  ScrollSmoother.create({
+    content: "#content",
+    // wrapper: "#wrapper",
+    speed: 0.3,
+    normalizeScroll: false,
+    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: true, // looks for data-speed and data-lag attributes on elements
+    smoothTouch: true, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+  });
+
   /**
    * Abhilash Journey Acroops the GGR Text & Three Photos Animation
    */
@@ -859,7 +870,7 @@ mm.add("(max-width: 615px)", () => {
     scrollTrigger: {
       trigger: ".circle_line_queen",
       scrub: 2,
-      start: "top top",
+      start: "top 50%",
       end: "+=700",
       // pin: true,
       // pinSpacing: true,
@@ -889,9 +900,9 @@ mm.add("(max-width: 615px)", () => {
     ".ver_line_04",
     {
       scrollTrigger: {
-        trigger: ".ver_line_04",
+        trigger: ".queen_01",
         scrub: 1,
-        start: "top top",
+        start: "center center",
         end: "+=5000",
         // markers: true,
         // delay: 50,
@@ -978,10 +989,22 @@ mm.add("(max-width: 615px)", () => {
       // markers: true,
     },
   });
+  const ggr_01 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sundy_times_ggr",
+      scrub: 2,
+      start: "top top",
+      end: "+=700",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03",
+      // markers: true,
+    },
+  });
 
   // ggr.duration(5);
 
-  ggr.from(".ggr_two", {
+  ggr_01.from(".ggr_two", {
     y: 100,
     autoAlpha: 0,
     ease: "power4",

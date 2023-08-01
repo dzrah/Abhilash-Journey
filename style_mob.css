@@ -383,7 +383,7 @@
   }
 
   .img_text {
-    padding: 0rem 2rem;
+    padding: 0rem 0rem;
     width: 280px;
     text-align: center;
     /* background-color: #fff; */
@@ -413,6 +413,10 @@
     /* top: 450px !important; */
   }
 
+  .ss_05 {
+    bottom: 120px;
+  }
+
   .ss_04 {
     bottom: 616px;
   }
@@ -436,7 +440,7 @@
 
   .pinned_container {
     position: relative;
-    bottom: 70px;
+    bottom: 110px;
   }
 
   .dc_02 {

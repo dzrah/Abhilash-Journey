@@ -14,10 +14,10 @@ mm.add("(min-width: 800px)", () => {
     content: "#content",
     // wrapper: "#wrapper",
     speed: 0.5,
-    // normalizeScroll: true,
+    normalizeScroll: false,
     smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
     effects: true, // looks for data-speed and data-lag attributes on elements
-    smoothTouch: true, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    smoothTouch: false, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   });
 
   // ScrollTrigger.normalizeScroll(true);
@@ -280,9 +280,9 @@ mm.add("(min-width: 800px)", () => {
     ".ver_line_04",
     {
       scrollTrigger: {
-        trigger: ".circle_line_queen",
-        scrub: 1,
-        start: "top 80%",
+        trigger: ".queen_01",
+        scrub: 2,
+        start: "bottom 15%",
         end: "+=5000",
         // markers: true,
         // delay: 50,

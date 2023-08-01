@@ -714,7 +714,7 @@ body {
 
 .storm_Abhilash {
   position: relative;
-  bottom:;
+  /* bottom:; */
   width: 100%;
   /* height: 100%; */
   object-fit: fill;
@@ -763,12 +763,12 @@ body {
   width: 100%;
   height: 300px;
 }
-.half_images img {
-  /* width: 15%; */
-  /* position: relative;
+/* .half_images img { */
+/* width: 15%; */
+/* position: relative;
   border: solid 1px #fff; */
-  /* top: 90px; */
-}
+/* top: 90px;
+} */
 
 .storm_02 {
   z-index: -1;

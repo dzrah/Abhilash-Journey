@@ -259,6 +259,10 @@
     left: 0;
     flex-direction: column;
   }
+  .date_cir_04 {
+    left: 0;
+    flex-direction: column;
+  }
 
   .date_cir_line_container {
     position: relative;
@@ -449,8 +453,28 @@
   .loop {
     font-size: 2rem;
   }
-}
 
+  .half_centery {
+    bottom: 0px;
+  }
+
+  .half_centery h2 {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.8rem;
+    /* filter: drop-shadow(0.2rem 0.2rem 0.4rem #002cc4); */
+  }
+
+  .half {
+    position: relative;
+    right: 80px;
+  }
+  .later {
+    position: relative;
+    left: 50px;
+  }
+}
+/* 
 @media screen and (max-width: 1510px) and (min-width: 815px) {
   .video_one {
     display: flex;
@@ -505,4 +529,4 @@
     margin-top: 2rem;
     text-align: center;
   }
-}
+} */

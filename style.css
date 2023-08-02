@@ -454,11 +454,25 @@ body {
   text-transform: uppercase;
 }
 
+.paragraph_01_ggr {
+  opacity: 0;
+}
+
 .paragraph_02_out_ggr {
+  opacity: 0;
+}
+.paragraph_02_out {
+  opacity: 0;
+}
+
+.paragraph_02_ggr {
   opacity: 0;
 }
 
 .paragraph_03_ggr {
+  opacity: 0;
+}
+.paragraph_03 {
   opacity: 0;
 }
 
@@ -466,7 +480,32 @@ body {
   opacity: 0;
 }
 
+.paragraph_04_out {
+  opacity: 0;
+}
+.paragraph_04 {
+  opacity: 0;
+}
+
 .paragraph_05_ggr {
+  opacity: 0;
+}
+.paragraph_06_ggr {
+  opacity: 0;
+}
+.paragraph_07_ggr {
+  opacity: 0;
+}
+.paragraph_08_ggr {
+  opacity: 0;
+}
+.paragraph_09_ggr {
+  opacity: 0;
+}
+.paragraph_05 {
+  opacity: 0;
+}
+.paragraph_06 {
   opacity: 0;
 }
 

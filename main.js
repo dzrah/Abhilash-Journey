@@ -86,20 +86,18 @@ mm.add("(min-width: 800px)", () => {
       // markers: true,
     },
   });
-  const gipsyMothPara = gsap.timeline({
+  const gipsyMothPara1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".circle_line_gispy",
       scrub: 2,
       start: "top 20%",
-      end: "+=700",
+      end: "+=3000",
       // pin: true,
       // pinSpacing: true,
       // endTrigger: ".ss_03"
       // markers: true,
     },
   });
-
-  gipsyMothPara.duration(6);
 
   gsap.from(".ver_line", {
     scrollTrigger: {
@@ -131,43 +129,66 @@ mm.add("(min-width: 800px)", () => {
     "-=10",
   );
 
-  gipsyMothPara.to(
-    ".paragraph_01",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=29.8",
-  );
-  gipsyMothPara.to(
-    ".paragraph_02",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
-  gipsyMothPara.to(
-    ".paragraph_02_out",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  gipsyMothPara1.to(".paragraph_01", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_01_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  gipsyMothPara1.to(".paragraph_02", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_02_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  gipsyMothPara.to(
-    ".paragraph_03",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  gipsyMothPara1.to(".paragraph_03", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  gipsyMothPara1.to(".paragraph_03_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_04", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_04_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_05", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_05_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_06", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
 
   gsap.from(
     ".ver_line_02",
@@ -234,7 +255,7 @@ mm.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: ".circle_line_queen",
       scrub: 1,
-      start: "top 80%",
+      start: "top 50%",
       end: "+=1000",
     },
     scaleY: 0,
@@ -370,6 +391,18 @@ mm.add("(min-width: 800px)", () => {
       // markers: true,
     },
   });
+  const ggrPara = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sundy_times_ggr",
+      scrub: 2,
+      start: "top top",
+      end: "+=7000",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03",
+      // markers: true,
+    },
+  });
   const ggr_01 = gsap.timeline({
     scrollTrigger: {
       trigger: ".sundy_times_ggr",
@@ -403,84 +436,179 @@ mm.add("(min-width: 800px)", () => {
     "-=10",
   );
 
-  ggr.to(
-    ".paragraph_01_ggr",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=29.8",
-  );
+  ggrPara.to(".paragraph_01_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_01_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  ggrPara.to(".paragraph_02_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_02_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_02_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
-  ggr.to(
-    ".paragraph_02_out_ggr",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  ggrPara.to(".paragraph_03_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
 
-  ggr.to(
-    ".paragraph_03_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  ggrPara.to(".paragraph_03_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_03_ggr_out",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  ggrPara.to(".paragraph_04_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_04_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_04_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  ggrPara.to(".paragraph_05_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_05_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_04_ggr_out",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  ggrPara.to(".paragraph_06_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
 
-  ggr.to(
-    ".paragraph_05_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  ggrPara.to(".paragraph_06_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  ggrPara.to(".paragraph_07_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  ggrPara.to(".paragraph_07_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  ggrPara.to(".paragraph_08_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  ggrPara.to(".paragraph_08_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  ggrPara.to(".paragraph_09_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  // ggr.to(
+  //   ".paragraph_01_ggr",
+  //   {
+  //     autoAlpha: 0,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "+=29.8",
+  // );
+
+  // ggr.to(
+  //   ".paragraph_02_ggr",
+  //   {
+  //     autoAlpha: 1,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "-=1.8",
+  // );
+  // ggr.to(
+  //   ".paragraph_02_out_ggr",
+  //   {
+  //     autoAlpha: 0,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "+=12.8",
+  // );
+
+  // ggr.to(
+  //   ".paragraph_03_ggr",
+  //   {
+  //     autoAlpha: 1,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "-=1.8",
+  // );
+
+  // ggr.to(
+  //   ".paragraph_03_ggr_out",
+  //   {
+  //     autoAlpha: 0,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "+=12.8",
+  // );
+
+  // ggr.to(
+  //   ".paragraph_04_ggr",
+  //   {
+  //     autoAlpha: 1,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "-=1.8",
+  // );
+
+  // ggr.to(
+  //   ".paragraph_04_ggr_out",
+  //   {
+  //     autoAlpha: 0,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "+=12.8",
+  // );
+
+  // ggr.to(
+  //   ".paragraph_05_ggr",
+  //   {
+  //     autoAlpha: 1,
+  //     ease: "power2",
+  //     duration: 6,
+  //   },
+  //   "-=1.8",
+  // );
 
   ggr.from(
     ".ver_line_06",
@@ -512,7 +640,7 @@ mm.add("(min-width: 800px)", () => {
     renderer: "svg",
     loop: false,
     autoplay: false,
-    path: "LottieAnimation/GGR_01.json",
+    path: "LottieAnimation/GGR_04.json",
   });
 
   console.log(animation_03.totalFrames);
@@ -535,7 +663,7 @@ mm.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: ".sundy_times_ggr",
       start: "0% top",
-      end: "300% center",
+      end: "+=7000",
       // markers: true,
       scrub: 2,
       // pinSpacing: true,
@@ -750,43 +878,79 @@ mm.add("(max-width: 615px)", () => {
     "-=10",
   );
 
-  gipsyMoth.to(
-    ".paragraph_01",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
+  const gipsyMothPara1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".circle_line_gispy",
+      scrub: 2,
+      start: "top 20%",
+      end: "+=3000",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03"
+      // markers: true,
     },
-    "+=29.8",
-  );
-  gipsyMoth.to(
-    ".paragraph_02",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
-  gipsyMoth.to(
-    ".paragraph_02_out",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  });
 
-  gipsyMoth.to(
-    ".paragraph_03",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  gipsyMothPara1.to(".paragraph_01", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_01_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  gipsyMothPara1.to(".paragraph_02", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_02_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_03", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  gipsyMothPara1.to(".paragraph_03_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_04", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_04_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_05", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  gipsyMothPara1.to(".paragraph_05_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  gipsyMothPara1.to(".paragraph_06", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
 
   gsap.from(
     ".ver_line_02",
@@ -1022,84 +1186,113 @@ mm.add("(max-width: 615px)", () => {
     "-=10",
   );
 
-  ggr.to(
-    ".paragraph_01_ggr",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
+  const ggrPara = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sundy_times_ggr",
+      scrub: 2,
+      start: "top top",
+      end: "+=7000",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03",
+      // markers: true,
     },
-    "+=29.8",
-  );
+  });
 
-  ggr.to(
-    ".paragraph_02_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
-  ggr.to(
-    ".paragraph_02_out_ggr",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  ggrPara.to(".paragraph_01_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_01_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  ggrPara.to(".paragraph_02_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_02_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_03_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  ggrPara.to(".paragraph_03_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
 
-  ggr.to(
-    ".paragraph_03_ggr_out",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  ggrPara.to(".paragraph_03_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_04_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  ggrPara.to(".paragraph_04_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_04_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_04_ggr_out",
-    {
-      autoAlpha: 0,
-      ease: "power2",
-      duration: 6,
-    },
-    "+=12.8",
-  );
+  ggrPara.to(".paragraph_05_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+  ggrPara.to(".paragraph_05_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
 
-  ggr.to(
-    ".paragraph_05_ggr",
-    {
-      autoAlpha: 1,
-      ease: "power2",
-      duration: 6,
-    },
-    "-=1.8",
-  );
+  ggrPara.to(".paragraph_06_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  ggrPara.to(".paragraph_06_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  ggrPara.to(".paragraph_07_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  ggrPara.to(".paragraph_07_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+  ggrPara.to(".paragraph_08_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
+
+  ggrPara.to(".paragraph_08_ggr_out", {
+    autoAlpha: 0,
+    ease: "power2",
+    duration: 1.5,
+  });
+
+  ggrPara.to(".paragraph_09_ggr", {
+    autoAlpha: 1,
+    ease: "power2",
+    duration: 2,
+  });
 
   ggr.from(
     ".ver_line_06",
@@ -1131,7 +1324,7 @@ mm.add("(max-width: 615px)", () => {
     renderer: "svg",
     loop: false,
     autoplay: false,
-    path: "LottieAnimation/GGR_01.json",
+    path: "LottieAnimation/GGR_04.json",
   });
 
   console.log(animation_03.totalFrames);
@@ -1154,7 +1347,7 @@ mm.add("(max-width: 615px)", () => {
     scrollTrigger: {
       trigger: ".sundy_times_ggr",
       start: "0% -11%",
-      end: "300% center",
+      end: "+=7000",
       // markers: true,
       scrub: 2,
       // pinSpacing: true,

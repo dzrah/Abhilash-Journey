@@ -223,7 +223,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 /**
  * Textures
  */
-const bakedTexture = textureLoader.load("Boat/Baked_UV.png");
+const bakedTexture = textureLoader.load("Boat/material0_basecolor.png");
 bakedTexture.flipY = false;
 bakedTexture.encoding = THREE.sRGBEncoding;
 
@@ -252,7 +252,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 /**
  * Model
  */
-gltfLoader.load("Boat/Boat_02.gltf", (gltf) => {
+gltfLoader.load("Boat/rapid.gltf", (gltf) => {
   console.log("loading_done");
   const glass_01 = gltf.scene.children.find(
     (child) => child.name === "glass_01",
@@ -357,7 +357,7 @@ const camera = new THREE.PerspectiveCamera(
   100,
 );
 
-camera.position.set(4, 1, -8);
+camera.position.set(4, 4, -8);
 // camera.rotation.x(0.0002);
 scene.add(camera);
 // let minRotationX = -Math.PI / 4;
@@ -419,14 +419,28 @@ function onResize() {
   if (camera.aspect > 1) {
     camera.position.z = -8;
   } else {
-    camera.position.z = -15;
+    camera.position.z = -10;
+    camera.position.y = 12;
+    camera.position.x = -5;
+    // gltf.scene.rotation.x = 0.002;
+    // camera.rotation.x = 30;
   }
   camera.updateProjectionMatrix();
+  // camera.position.set(4, 12, -15);
+  // camera.rotation.set(100, 0, 0);
 
+  // camera.rotation.x(0.0002);
   //your other stuff ...
 }
 
 onResize();
+
+// let mmThree = gsap.matchMedia();
+
+// mmThree.add("(min-width: 800px)", () => {
+//   gsap.to("webgl", { rotateX: 90, duration: 1, ease: "power2" });
+//   console.log("rotation done");
+// });
 
 // const vid_01 = document.querySelector('.point_0')
 // const pointVideo = new CSS2DObject (vid_01)
@@ -498,11 +512,11 @@ renderer.toneMappingExposure = 3;
  * Media Query
  */
 
-const mediaQuery = window.matchMedia("(min-width:815px)");
-if (mediaQuery.matchMedia) {
-  gltf.scene.scale.set(0.5, 0.5, 0.5);
-  console.log("Done");
-}
+// const mediaQuery = window.matchMedia("(min-width:815px)");
+// if (mediaQuery.matchMedia) {
+//   gltf.scene.scale.set(0.5, 0.5, 0.5);
+//   console.log("Done");
+// }
 
 /**
  * Animate

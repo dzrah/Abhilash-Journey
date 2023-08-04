@@ -776,10 +776,10 @@ mm.add("(max-width: 615px)", () => {
   ScrollSmoother.create({
     content: "#content",
     // wrapper: "#wrapper",
-    speed: 0.3,
+    speed: 0.7,
     normalizeScroll: false,
-    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-    effects: true, // looks for data-speed and data-lag attributes on elements
+    smooth: 0.2, // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: false, // looks for data-speed and data-lag attributes on elements
     smoothTouch: true, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   });
 
@@ -1002,7 +1002,7 @@ mm.add("(max-width: 615px)", () => {
     },
     scrollTrigger: {
       trigger: ".circle_line_gispy",
-      start: "top top",
+      start: "top 0%",
       end: "300% center",
       // markers: true,
       scrub: 2,
@@ -1113,7 +1113,7 @@ mm.add("(max-width: 615px)", () => {
     },
     scrollTrigger: {
       trigger: ".circle_line_queen",
-      start: "0% 42%",
+      start: "0% 48%",
       end: "300% center",
       // markers: true,
       scrub: 2,

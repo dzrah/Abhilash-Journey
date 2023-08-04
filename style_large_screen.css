@@ -12,3 +12,42 @@
     padding: 0rem 12rem;
   }
 } */
+
+@media screen and (min-width: 2048px) {
+  .img_con {
+    padding: 0 25rem;
+  }
+
+  .mid img {
+    width: 75%;
+  }
+
+  .title_logo h1 {
+    font-size: 8.1rem;
+  }
+
+  .title_logo img {
+    margin-bottom: 25px;
+    width: 248.04px;
+    height: 67.86px;
+  }
+
+  .right img {
+    width: 33%;
+  }
+  .left img {
+    width: 32%;
+  }
+
+  .right {
+    right: 400px;
+  }
+
+  .left {
+    left: 400px;
+  }
+
+  .img_text {
+    padding: 0rem 12rem;
+  }
+}

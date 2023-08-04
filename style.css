@@ -1042,7 +1042,7 @@ body {
 }
 
 footer {
-  height: 13vh;
+  height: 12vh;
   /* overflow-y: hidden; */
 }
 
@@ -1054,6 +1054,43 @@ footer {
   background-color: #002cc4;
   /* bottom: 120px; */
   z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f_social_icon {
+  display: flex;
+  gap: 0.3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.fab {
+  padding: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  width: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.social_media_div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fab:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.follow_us {
+  color: #fff;
 }
 
 /* .vdieo_gallery h1 {

@@ -332,19 +332,23 @@
   }
 
   .sundy_times_ggr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     bottom: 700px;
   }
 
   .gispy_two {
     width: 65%;
-    min-height: auto;
   }
   .queen_01 {
-    min-width: 65%;
+    width: 65%;
   }
 
   .ggr_two {
-    min-width: 65%;
+    width: 65%;
   }
 
   .con_one {
@@ -417,6 +421,11 @@
   }
 
   .circle_line_queen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
     /* top: 450px !important; */
   }
@@ -605,3 +614,253 @@
     text-align: center;
   }
 } */
+
+@media screen and (max-width: 1650px) {
+  .date_cir {
+    flex-direction: column;
+    font-size: 0.7rem;
+    font-weight: 500;
+    left: 0;
+  }
+  .date_cir_02 {
+    flex-direction: column;
+    font-size: 0.7rem;
+    font-weight: 500;
+    left: 0;
+    /* left: 0; */
+  }
+  .date_cir_03 p {
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    /* margin-top: 0.5rem; */
+  }
+  .date_cir_02 p {
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    /* margin-top: 0.5rem; */
+  }
+  .date_cir p {
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    /* margin-top: 0.5rem; */
+  }
+
+  .date_cir_03 {
+    left: 0;
+    flex-direction: column;
+  }
+  .date_cir_04 {
+    left: 0;
+    flex-direction: column;
+  }
+  .date_cir_04 p {
+    font-size: 1rem;
+  }
+
+  .date_cir_line_container {
+    position: relative;
+    right: 0px;
+    /* z-index: 50000; */
+    margin-top: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .date_cir_line_container_02 {
+    position: relative;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ver_line {
+    left: 0px;
+    height: 130px;
+  }
+
+  .ver_line_04 {
+    position: relative;
+    bottom: -151px;
+    right: 0px;
+    height: 157px;
+    margin-bottom: 5rem;
+    left: 0;
+  }
+  .ver_line_05 {
+    left: 0;
+    height: 130px;
+  }
+  .ver_line_06 {
+    left: 0;
+    height: 105px;
+  }
+
+  .sundy_times_ggr {
+    /* position: relative; */
+    bottom: 150px !important;
+  }
+
+  .box_an {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+  }
+
+  .circle_line_gispy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* bottom: 100px; */
+  }
+
+  .sundy_times_ggr {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -190px !important;
+  }
+
+  .circle_line_queen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -10px !important;
+  }
+
+  .gispy_two {
+    width: 55%;
+    /* min-height: auto; */
+  }
+  .queen_01 {
+    width: 55%;
+  }
+
+  .ggr_two {
+    width: 55%;
+  }
+
+  .con_one {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .con_two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .con_two {
+    bottom: 442px;
+  }
+
+  .float_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .img_con h2 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .img_con {
+    padding: 0;
+  }
+
+  .float_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* max-width: 100%;
+    object-fit: cover; */
+  }
+
+  .img_text {
+    padding: 0rem 0rem;
+    width: 280px;
+    text-align: center;
+    /* background-color: #fff; */
+  }
+  .img_text h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    /* background-color: #fff; */
+  }
+
+  .second_section {
+    height: 330px;
+  }
+
+  .ver_line_02 {
+    position: relative;
+    bottom: -151px;
+    right: 0px;
+    height: 105px;
+    margin-bottom: 5rem;
+    left: 0;
+  }
+
+  .ss_05 {
+    bottom: 107px;
+  }
+
+  .ss_04 {
+    bottom: 616px;
+  }
+
+  .ss_03 {
+    z-index: -5555;
+  }
+
+  .ss_02 {
+    bottom: 346px;
+  }
+
+  .ggr {
+    bottom: -90px;
+  }
+
+  .con_three {
+    position: relative;
+    top: -00px;
+  }
+
+  .pinned_container {
+    position: relative;
+    bottom: 70px;
+  }
+
+  .dc_02 {
+    left: 0px;
+    flex-direction: column-reverse;
+  }
+
+  .ver_line_03 {
+    left: 0px;
+    bottom: 42px;
+    height: 143px;
+  }
+}

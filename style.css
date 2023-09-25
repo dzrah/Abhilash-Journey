@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+@font-face {
+  font-family: "vertical";
+  src: url(Fonts/Vertikal.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -342,6 +347,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  left: 4px;
 }
 
 .date_may {
@@ -389,8 +396,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 4.3px;
-  bottom: 30px;
+  /* left: 4.3px; */
+  /* bottom: 30px; */
+  opacity: 0;
 }
 
 .ver_line {
@@ -431,6 +439,372 @@ body {
 .img_con {
   position: relative;
   display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8rem;
+}
+
+.half_centry_text {
+  color: #fff;
+  padding: 0 14rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.Abhilash_Rescue_Lines_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 14rem;
+}
+
+.half_centry_text_h_line {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+.half_centry_text_h_line_last_div {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.lines_date_number_left_right_img_container {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  width: 100%;
+}
+.lines_date_number_left_right_img_container_02 {
+  display: grid;
+  grid-template-columns: 5fr 0fr;
+  width: 100%;
+}
+
+.lines_date_number_left_right_img_container_03 {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  width: 100%;
+}
+
+.lines_date_number_left_img_conrtainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.right_img_comtainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.right_img_comtainer_02 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.right_img_comtainer_hope {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  margin-top: 1.5rem;
+  gap: 2rem;
+}
+.right_img_comtainer_hope p {
+  margin-left: 2rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.right_img_comtainer img {
+  width: 90%;
+  border: solid 1px #fff;
+}
+.right_img_comtainer_02 img {
+  width: 90%;
+  border: solid 1px #fff;
+}
+
+.Abhilash_rescue_01 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.Abhilash_rescue_01 video {
+  width: 92%;
+  border: solid 1px #fff;
+}
+
+.Abhilash_rescue_02 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  object-fit: cover;
+  width: 100%;
+  border: solid 1px #fff;
+  height: 85.7%;
+}
+.Abhilash_rescue_03 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  object-fit: cover;
+  width: 100%;
+  border: solid 1px #fff;
+  height: 80%;
+}
+.Abhilash_rescue_04 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  object-fit: cover;
+  width: 100%;
+  border: solid 1px #fff;
+  height: 80%;
+}
+
+.Abhilash_rescue_04 img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+.Abhilash_rescue_03 video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.Abhilash_rescue_02 img {
+  width: 100%;
+  height: 100%;
+}
+
+.Abhilash_rescue_02_container p {
+  color: #dfdfdf;
+  font-weight: 200;
+  font-size: 0.6rem;
+  float: right;
+  margin-bottom: 0.3rem;
+}
+.added_div p {
+  color: #dfdfdf;
+  font-weight: 200;
+  font-size: 0.6rem;
+  float: right;
+  margin-bottom: 0.3rem;
+}
+
+.lines_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.vertical_line_contianer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.vertical_line_contianer_02 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.vertical_line_contianer_01 {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+}
+
+.vertical_line_con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical_line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 80px;
+  background-color: #fff;
+}
+
+.vertical_line_window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 180px;
+  background-color: #fff;
+}
+
+.horizontal_line {
+  height: 1px;
+  width: 33%;
+  background-color: #fff;
+}
+.horizontal_line_01 {
+  height: 1px;
+  width: 22%;
+  background-color: #fff;
+}
+.horizontal_line_02 {
+  height: 1px;
+  width: 65%;
+  background-color: #fff;
+}
+
+.date_number_img_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  /* align-items: start;
+  justify-content: start; */
+}
+.date_number_img_container_01 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.date_number {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.date_number_hope {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.date_number_hope_02 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.date_number_text h2 {
+  font-family: "vertical";
+  color: #fff;
+  font-size: 32rem;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: end;
+}
+.date_number_text_02 h2 {
+  /* font-family: "vertical"; */
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: start;
+}
+.date_number_text_hope_02 h2 {
+  font-family: "vertical";
+  color: #fff;
+  font-size: 32rem;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: start;
+}
+.date_number_text_hope h2 {
+  font-family: "vertical";
+  color: #fff;
+  font-size: 12rem;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: start;
+}
+.date_number_text_hope {
+  display: flex;
+  align-items: flex-start;
+  justify-self: flex-start;
+}
+
+.date_number_text {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.left_title h2 {
+  font-size: 4rem;
+  line-height: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.center_title h2 {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.left_title_hope h2 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 2rem;
+}
+
+.title_paragraph {
+  display: flex;
+  color: #fff;
+  gap: 1rem;
+}
+.title_paragraph_01 {
+  display: flex;
+  color: #fff;
+  gap: 5rem;
+}
+
+.center_paragraph {
+  margin-top: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.center_paragraph p {
+  margin-bottom: 2rem;
+}
+
+.padding_paragraph {
+  padding-left: 8rem;
+  padding-right: 8rem;
+  margin-bottom: 2rem;
+}
+
+.border_paragraph {
+  border-bottom: solid 1px #fff;
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+
+.img_con_Abhilash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 8rem;
@@ -654,6 +1028,27 @@ body {
   bottom: 810px;
 }
 
+.Abhilash_Rescue_Section {
+  position: relative;
+  height: 100vh;
+  opacity: 1;
+  bottom: 1130px;
+}
+
+.half_centry_text_img_one {
+  position: relative;
+  left: 23rem;
+  bottom: 3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.half_centry_text_img_one img {
+  width: 60%;
+  border: solid 1px #fff;
+}
+
 .dc_02 {
   position: relative;
   /* left: 127px; */
@@ -720,6 +1115,133 @@ body {
   bottom: 300px;
 }
 
+.Zup {
+  z-index: 9999;
+}
+
+.window_section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  /* height: 100vh; */
+  /* top: 155.1rem; */
+  z-index: -9999;
+}
+
+.window_section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  z-index: 2; /* Place the image on top of the video */
+}
+
+.window_video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  object-fit: cover;
+}
+
+.window_video video {
+  width: 57%;
+  border: solid 1px #ffffff;
+}
+
+.Abhilash_Rescue_Section_02 {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  opacity: 1;
+  top: 2470px;
+  z-index: -555;
+}
+
+.Abhilash_Rescue_Section_02_pinned {
+  z-index: -555;
+}
+
+.image_hope {
+  position: relative;
+}
+
+.new_hope_text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 100%;
+  height: 50%;
+  z-index: 99999999;
+  text-transform: uppercase;
+  font-size: 8rem;
+  font-family: "vertical";
+  font-weight: normal;
+  text-decoration: none;
+  padding: 0 10rem;
+}
+
+.first_text_hope {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* right: 30%; */
+  /* opacity: 0; */
+}
+
+.first_text_hope h2 {
+  font-family: "vertical";
+  font-weight: normal;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+}
+.second_text_hope {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* left: 30%; */
+  /* opacity: 0; */
+}
+
+.second_text_hope h2 {
+  font-family: "vertical";
+  font-weight: normal;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+}
+
+.hope_bayanat_text_div {
+  position: relative;
+  color: #fff;
+  padding: 0 14rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  top: 140rem;
+}
+
+.Abhilash_Rescue_Lines_container_02 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 14rem;
+  top: 141rem;
+}
+
 .boat {
   position: relative;
   width: 100%;
@@ -728,110 +1250,97 @@ body {
   justify-content: center;
   overflow: hidden;
   top: 120px;
+  margin-top: 130rem;
+  /* cursor: none; */
   /* height: 1500px; */
 }
 
-.half_centery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  /* background-color: #002cc4; */
-  /* background-color: #b7b7b7; */
-  /* background-image: linear-gradient(white, #002cc4); */
-  position: relative;
-  bottom: 348px;
-  /* overflow: hidden; */
-  /* color: #111; */
-}
-
-.storm_Abhilash_con {
-  position: relative;
-  bottom: 160px;
-  width: 45%;
-  border: solid 1px #000;
-}
-
-.storm_Abhilash {
-  position: relative;
-  /* bottom:; */
-  width: 100%;
-  /* height: 100%; */
-  object-fit: fill;
-  filter: grayscale(100%);
-}
-
-.half_centery p {
-  text-align: center;
-  padding: 0 32rem;
-  margin-top: 4rem;
-  color: #070707;
-  z-index: 5;
-}
-.half_centery h2 {
-  text-align: center;
-  font-size: 4rem;
-  text-transform: uppercase;
-  color: #002cc4;
-  line-height: 3.5rem;
-  /* filter: drop-shadow(0.2rem 0.2rem 0.4rem #002cc4); */
-}
-
-.half_title {
-  position: relative;
-  bottom: 50px;
-  z-index: 2;
-}
-
-.half {
-  position: relative;
-  right: 120px;
-}
-.later {
-  position: relative;
-  left: 100px;
-}
-
-.half_images {
-  position: relative;
-  /* height: 300px; */
-  /* overflow: hidden; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  width: 100%;
-  height: 300px;
-}
-/* .half_images img { */
-/* width: 15%; */
-/* position: relative;
-  border: solid 1px #fff; */
-/* top: 90px;
+/* .rotation {
+  width: 100px;
+  position: absolute;
+  transform: translate(50%, 50%);
+  animation: rotation 4.5s infinite linear;
+  pointer-events: none;
+  transition:
+    top 1s,
+    left 1s;
+  transition-timing-function: ease-out;
+  opacity: 0;
+  z-index: 9999999;
 } */
 
-.storm_02 {
-  z-index: -1;
-  /* rotate: -30deg; */
-  top: 6rem;
-  left: 345px;
-  width: 20%;
-  opacity: 0;
+/* text {
+  font-size: 4em;
+  text-transform: uppercase;
+  font-family: "Poppins";
+  font-weight: 400;
+  fill: white;
+} */
+
+/* button {
+  background: rgb(0, 69, 219);
+  border: none;
+  outline: none;
+  padding: 2em;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.3em;
+  font-size: 0.9rem;
+  cursor: pointer;
+} */
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
-.storm_01 {
-  top: 8rem;
-  width: 20%;
-  opacity: 1;
+
+/* .cursor {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  color: #fff;
 }
-.storm_03 {
-  top: 6rem;
-  z-index: -1;
-  /* rotate: 30deg; */
-  right: 345px;
-  width: 20%;
-  opacity: 0;
+
+.cursor-text {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+}
+.cursor-text .char {
+  position: absolute !important;
+} */
+
+.con_four {
+  /* background-color: #002cc4; */
+  width: 100%;
+  /* height: 100vh; */
+  position: relative;
+  /* bottom: 320px; */
+}
+
+.second_section_04 {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  /* height: 400px; */
+  overflow: hidden;
+  /* bottom: 435px; */
+}
+
+.circle_section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .webgl {
@@ -858,7 +1367,7 @@ body {
   font-size: 5rem;
   white-space: nowrap;
   font-family: "Roboto";
-  color: #002cc4;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -871,7 +1380,7 @@ body {
 }
 
 .loop h1 span {
-  -webkit-text-stroke: 1.2px #002cc4;
+  -webkit-text-stroke: 1.2px #ffffff;
   color: transparent;
 }
 
@@ -1038,7 +1547,7 @@ body {
 }
 .video_style video {
   width: 100%;
-  border: solid 1px #002cc4;
+  border: solid 1px #ededed;
 }
 
 footer {
@@ -1112,4 +1621,86 @@ footer {
   text-align: center;
   font-weight: 100;
   letter-spacing: 0.8rem;
+  color: #fff;
+}
+
+@media screen and (min-height: 1080px) {
+  .Abhilash_Rescue_Section_02 {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    opacity: 1;
+    top: 2320px;
+  }
+
+  .window_video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .window_video video {
+    position: relative;
+    bottom: 3rem;
+    width: 60%;
+  }
+
+  .hope_bayanat_text_div {
+    position: relative;
+    color: #fff;
+    padding: 0 14rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    top: 127rem;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+li {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  font-size: 3rem;
+  text-align: center;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  color: transparent;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.item img {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  z-index: -10;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  border: solid 1px #fff;
+}
+
+.ul_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: solid 1px #ffffff;
+}
+
+.ul_one {
+  border-right: solid 1px #ffffff;
+}
+
+.last_div {
+  top: 141rem;
 }

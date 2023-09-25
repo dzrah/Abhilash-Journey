@@ -2,6 +2,11 @@
   .img_con {
     padding: 0 15rem;
   }
+
+  /* .sundy_times_ggr {
+    position: relative;
+    bottom: 450px !important;
+  } */
 }
 /* @media screen and (min-width: 3200px) {
   .img_con {
@@ -13,9 +18,9 @@
   }
 } */
 
-@media screen and (min-width: 2048px) {
+@media screen and (min-width: 1800px) {
   .img_con {
-    padding: 0 25rem;
+    padding: 0 22rem;
   }
 
   .mid img {
@@ -49,5 +54,13 @@
 
   .img_text {
     padding: 0rem 12rem;
+  }
+
+  .img_con_Abhilash {
+    padding: 0 22rem;
+  }
+
+  .Abhilash_Rescue_Lines_container {
+    padding: 0 18rem;
   }
 }

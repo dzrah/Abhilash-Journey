@@ -4,9 +4,28 @@ import { ScrollSmoother } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 // ScrollTrigger.normalizeScroll(false);
 
+const items = document.querySelectorAll(".item");
+
+items.forEach((el) => {
+  const image = el.querySelector("img");
+
+  el.addEventListener("mouseenter", (e) => {
+    gsap.to(image, { autoAlpha: 1 });
+  });
+
+  el.addEventListener("mouseleave", (e) => {
+    gsap.to(image, { autoAlpha: 0 });
+  });
+
+  el.addEventListener("mousemove", (e) => {
+    gsap.set(image, { x: e.offsetX - 200 });
+  });
+});
+
 /**
  * Desktop Animation
  */
+ScrollTrigger.refresh();
 
 let mm = gsap.matchMedia();
 
@@ -304,8 +323,8 @@ mm.add("(min-width: 800px)", () => {
       scrollTrigger: {
         trigger: ".queen_01",
         scrub: 2,
-        start: "bottom 15%",
-        end: "+=5000",
+        start: "top 0%",
+        end: "+=6000",
         // markers: true,
         // delay: 50,
       },
@@ -531,85 +550,6 @@ mm.add("(min-width: 800px)", () => {
     duration: 2,
   });
 
-  // ggr.to(
-  //   ".paragraph_01_ggr",
-  //   {
-  //     autoAlpha: 0,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "+=29.8",
-  // );
-
-  // ggr.to(
-  //   ".paragraph_02_ggr",
-  //   {
-  //     autoAlpha: 1,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "-=1.8",
-  // );
-  // ggr.to(
-  //   ".paragraph_02_out_ggr",
-  //   {
-  //     autoAlpha: 0,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "+=12.8",
-  // );
-
-  // ggr.to(
-  //   ".paragraph_03_ggr",
-  //   {
-  //     autoAlpha: 1,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "-=1.8",
-  // );
-
-  // ggr.to(
-  //   ".paragraph_03_ggr_out",
-  //   {
-  //     autoAlpha: 0,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "+=12.8",
-  // );
-
-  // ggr.to(
-  //   ".paragraph_04_ggr",
-  //   {
-  //     autoAlpha: 1,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "-=1.8",
-  // );
-
-  // ggr.to(
-  //   ".paragraph_04_ggr_out",
-  //   {
-  //     autoAlpha: 0,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "+=12.8",
-  // );
-
-  // ggr.to(
-  //   ".paragraph_05_ggr",
-  //   {
-  //     autoAlpha: 1,
-  //     ease: "power2",
-  //     duration: 6,
-  //   },
-  //   "-=1.8",
-  // );
-
   ggr.from(
     ".ver_line_06",
     {
@@ -670,17 +610,82 @@ mm.add("(min-width: 800px)", () => {
       pin: ".sundy_times_ggr",
       // pinType: "fixed",
       invalidateOnRefresh: true,
+      onLeave: () => {
+        gsap.to("body", { duration: 1.0, backgroundColor: "#000000" });
+        gsap.to(".ggr_two", { duration: 1.0, borderColor: "#ffffff" });
+        gsap.to(".ver_line_06", { duration: 1.0, backgroundColor: "#ffffff" });
+        gsap.to(".ver_line_05", { duration: 1.0, backgroundColor: "#ffffff" });
+        gsap.to(".img_con h2", { duration: 1.0, color: "#ffffff" });
+        gsap.to(".paragraph", { duration: 1.0, color: "#ffffff" });
+        gsap.to(".date_cir_05", { duration: 1.0, autoAlpha: 1 });
+        // gsap.from(".Abhilash_Rescue_Section", {
+        //   duration: 1.0,
+        //   autoAlpha: 0,
+        //   y: 50,
+        // });
+      },
+
+      onEnterBack: () => {
+        gsap.to("body", { duration: 1.0, backgroundColor: "#ffffff" });
+        gsap.to(".ggr_two", { duration: 1.0, borderColor: "#000000" });
+        gsap.to(".ver_line_06", { duration: 1.0, backgroundColor: "#000000" });
+        gsap.to(".ver_line_05", { duration: 1.0, backgroundColor: "#000000" });
+        gsap.to(".img_con h2", { duration: 1.0, color: "#002cc4" });
+        gsap.to(".paragraph", { duration: 1.0, color: "#000000" });
+        gsap.to(".date_cir_05", { duration: 1.0, autoAlpha: 0 });
+      },
+    },
+  });
+
+  let playhead_04 = { frame: 0, totalFrames: 0 };
+  let totalFrames_04 = 0;
+  let animation_04 = lottie.loadAnimation({
+    container: document.querySelector(".Abhilash_rescue_02"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "LottieAnimation/Abhilash_Rescue.json",
+  });
+
+  console.log(animation_04.totalFrames);
+
+  animation_04.addEventListener("DOMLoaded", function () {
+    // no idea why this isn't being called?
+    // console.log("loaded");
+    // console.log(animation.totalFrames);
+    playhead_04.totalFrames = animation_04.totalFrames - 1;
+    ScrollTrigger.refresh();
+  });
+  // ScrollTrigger.normalizeScroll(true);
+
+  gsap.to(playhead_04, {
+    frame: () => playhead_04.totalFrames,
+    ease: "none",
+    onUpdate: () => {
+      // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+      animation_04.goToAndStop(playhead_04.frame, true);
+    },
+    scrollTrigger: {
+      trigger: ".Abhilash_Rescue_Lines_container",
+      start: "center center",
+      end: "+=3500",
+      // markers: true,
+      scrub: 2,
+      pinSpacing: false,
+      pin: ".pinned_abhilash",
+      // pinType: "fixed",
+      invalidateOnRefresh: true,
     },
   });
 
   // ScrollTrigger.create({
-  //   trigger: ".half_centery",
+  //   trigger: ".img_con_Abhilash",
   //   markers: true,
-  //   start: "top 0%",
+  //   start: "bottom bottom",
   //   end: "bottom 50%",
 
   //   onEnter: () => {
-  //     gsap.to("body", { duration: 1.0, backgroundColor: "#7E7E7E" });
+  //     gsap.to("body", { duration: 1.0, backgroundColor: "#000000" });
   //     gsap.to(".ver_line_06", { duration: 1.0, backgroundColor: "#ffffff" });
   //   },
 
@@ -690,68 +695,167 @@ mm.add("(min-width: 800px)", () => {
   //   },
   // });
 
-  // const storm = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".half_centery",
-  //     scrub: 2,
-  //     start: "top 0%",
-  //     end: "+=300",
-  //     pin: true,
-  //     // pinSpacing: false,
-  //     // endTrigger: ".ss_03",
-  //     // markers: true,
-  //   },
-  // });
-  // const stormImg = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".half_images",
-  //     scrub: 2,
-  //     start: "top 80%",
-  //     end: "+=300",
-  //     pin: ".half_centery",
-  //     // pinSpacing: true,
-  //     // endTrigger: ".ss_03",
-  //     // markers: true,
-  //   },
-  // });
+  const hope_text = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".new_hope_text",
+      scrub: 2,
+      start: "top 120%",
+      end: "+=1000",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03"
+      // markers: true,
+    },
+  });
+  hope_text.from(".second_text_hope", {
+    autoAlpha: 0,
+    xPercent: 50,
+    duration: 1,
+    ease: "power2",
+  });
 
-  // storm.from(
-  //   ".half_images",
-  //   {
-  //     autoAlpha: 0,
-  //     yPercent: 50,
-  //     ease: "power2",
-  //     duration: 2,
-  //   },
-  //   "anim",
-  // );
+  const hope_text_02 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".new_hope_text",
+      scrub: 2,
+      start: "top 120%",
+      end: "+=1000",
+      // pin: true,
+      // pinSpacing: true,
+      // endTrigger: ".ss_03"
+      // markers: true,
+    },
+  });
 
-  // storm.to(
-  //   ".storm_02",
+  hope_text_02.from(".first_text_hope", {
+    autoAlpha: 0,
+    xPercent: -50,
+    duration: 1,
+    ease: "power2",
+  });
+  const hope_zoom = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".Abhilash_Rescue_Section_02",
+      scrub: 3,
+      start: "center center",
+      end: "+=3000",
+      pin: ".Abhilash_Rescue_Section_02_pinned",
+      // pinSpacing: false,
+      // endTrigger: ".ss_03"
+      // markers: true,
+      invalidateOnRefresh: true,
+      // onEnter: () => {
+      //   gsap.to("body", { duration: 1, backgroundColor: "#000000" });
+      // },
+      // onEnterBack: () => {
+      //   gsap.to("body", { duration: 1.0, backgroundColor: "#000000" });
+      // },
+      // onLeaveBack: () => {
+      //   gsap.to("body", { duration: 1.0, backgroundColor: "#000000" });
+      // },
+    },
+  });
+  // hope_zoom.to("body", { duration: 1, backgroundColor: "#000000" });
+
+  hope_zoom.to(
+    ".image_hope",
+    {
+      scale: 30,
+      duration: 4,
+      ease: "power0",
+    },
+    "=+0.9",
+  );
+  const hope_zoom_color = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".Abhilash_Rescue_Section_02",
+      scrub: 4,
+      start: "bottom 33%",
+      end: "bottom -25%",
+      // pin: ".Abhilash_Rescue_Section_02_pinned",
+      // pinSpacing: false,
+      // endTrigger: ".ss_03"
+      // markers: true,
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        gsap.to("body", { duration: 0.7, backgroundColor: "#002cc4" });
+      },
+      // onLeaveBack: () => {
+      //   gsap.to("body", { duration: 0.7, backgroundColor: "#002cc4" });
+      // },
+      onLeaverBack: () => {
+        gsap.to("body", { duration: 1, backgroundColor: "#000000" });
+      },
+      onEnterBack: () => {
+        gsap.to("body", { duration: 1, backgroundColor: "#000000" });
+      },
+      // onLeaveBack: () => {
+      //   gsap.to("body", { duration: 1, backgroundColor: "#000000" });
+      // },
+    },
+  });
+
+  ScrollTrigger.refresh();
+
+  // hope_zoom.to(
+  //   ".new_hope_text",
   //   {
-  //     autoAlpha: 1,
-  //     xPercent: -50,
-  //     rotate: -30,
-  //     ease: "power2",
-  //     duration: 2,
-  //     transformOrigin: "bottom right",
+  //     scale: 100,
+  //     duration: 20,
+  //     ease: "power1",
   //   },
-  //   "anim",
-  // );
-  // storm.to(
-  //   ".storm_03",
-  //   {
-  //     autoAlpha: 1,
-  //     xPercent: 50,
-  //     rotate: 30,
-  //     ease: "power2",
-  //     duration: 2,
-  //     transformOrigin: "bottom left",
-  //     zIndex: "3",
-  //   },
-  //   "anim",
+  //   "=+0.05",
   // );
 });
+
+/**
+ * Full screen laptop
+ */
+
+// mm.add("(min-width: 1920px)", () => {
+//   console.log("1024");
+//   gsap.to(playhead_03, {
+//     frame: () => playhead_03.totalFrames,
+//     ease: "none",
+//     onUpdate: () => {
+//       // console.log('frame value', animation.totalFrames, 'playhead value', playhead.frame);
+//       animation_03.goToAndStop(playhead_03.frame, true);
+//     },
+//     scrollTrigger: {
+//       trigger: ".sundy_times_ggr",
+//       start: "0% 100%",
+//       end: "+=7000",
+//       // markers: true,
+//       scrub: 2,
+//       // pinSpacing: true,
+//       pin: ".sundy_times_ggr",
+//       // pinType: "fixed",
+//       invalidateOnRefresh: true,
+//       onLeave: () => {
+//         gsap.to("body", { duration: 1.0, backgroundColor: "#000000" });
+//         gsap.to(".ver_line_06", { duration: 1.0, backgroundColor: "#ffffff" });
+//         gsap.to(".ver_line_05", { duration: 1.0, backgroundColor: "#ffffff" });
+//         gsap.to(".img_con h2", { duration: 1.0, color: "#ffffff" });
+//         gsap.to(".paragraph", { duration: 1.0, color: "#ffffff" });
+//         gsap.to(".date_cir_05", { duration: 1.0, autoAlpha: 1 });
+//         gsap.from(".Abhilash_Rescue_Section", {
+//           duration: 1.0,
+//           autoAlpha: 0,
+//           y: 50,
+//         });
+//       },
+
+//       onEnterBack: () => {
+//         gsap.to("body", { duration: 1.0, backgroundColor: "#ffffff" });
+//         gsap.to(".ver_line_06", { duration: 1.0, backgroundColor: "#000000" });
+//         gsap.to(".ver_line_05", { duration: 1.0, backgroundColor: "#000000" });
+//         gsap.to(".img_con h2", { duration: 1.0, color: "#002cc4" });
+//         gsap.to(".paragraph", { duration: 1.0, color: "#000000" });
+//         gsap.to(".date_cir_05", { duration: 1.0, autoAlpha: 0 });
+//       },
+//     },
+//   });
+// });
 
 /**
  * Mobile Animation
